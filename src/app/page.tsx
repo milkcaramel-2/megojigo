@@ -1,102 +1,478 @@
+"use client";
+
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [currentImageSet, setCurrentImageSet] = useState(0);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Create mailto link with form data
+    const subject = "메고지고 떡집 문의";
+    const body = `
+이름: ${formData.name}
+연락처: ${formData.phone}
+
+문의 내용:
+${formData.message}
+
+---
+메고지고 홈페이지에서 전송됨
+    `.trim();
+
+    const mailtoLink = `mailto:dsj152@naver.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // Open default email client
+    window.location.href = mailtoLink;
+    
+    // Reset form
+    setFormData({ name: '', phone: '', message: '' });
+    setIsSubmitting(false);
+    
+    // Show success message
+    alert('이메일 프로그램이 열렸습니다. 메일을 확인하고 전송해주세요.');
+  };
+
+  const handleKakaoClick = () => {
+    // Direct redirect to KakaoTalk channel
+    window.open('https://pf.kakao.com/_thxdvn', '_blank');
+  };
+
+  const handleInstagramClick = () => {
+    // Direct redirect to Instagram profile
+    window.open('https://www.instagram.com/dsj_152?igsh=ODduY2JrMWp3d3ps', '_blank');
+  };
+
+  const handleProductsClick = () => {
+    window.location.href = '/gallery';
+  };
+
+  const handleContactClick = () => {
+    const footer = document.getElementById('footer');
+    if (footer) {
+      footer.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleGalleryImageClick = () => {
+    window.location.href = '/gallery';
+  };
+  const ricecakeProducts = [
+    {
+      id: 1,
+      name: "백설기",
+      description: "부드럽고 촉촉한 전통 떡",
+      image: "/gallery1.jpg"
+    },
+    {
+      id: 2,
+      name: "무지개떡",
+      description: "화려한 색감의 축하용 떡",
+      image: "/gallery2.jpg"
+    },
+    {
+      id: 3,
+      name: "팥떡",
+      description: "달콤한 팥앙금 떡",
+      image: "/gallery3.jpg"
+    },
+    {
+      id: 4,
+      name: "참깨떡",
+      description: "고소한 참깨 풍미",
+      image: "/gallery4.jpg"
+    },
+    {
+      id: 5,
+      name: "꽃떡",
+      description: "아름다운 꽃 장식 떡",
+      image: "/gallery5.jpg"
+    },
+    {
+      id: 6,
+      name: "퓨전떡",
+      description: "전통과 현대의 만남",
+      image: "/gallery6.jpg"
+    }
+  ];
+
+  // Create image sets for smooth cycling
+  const imageSets = [
+    [ricecakeProducts[0], ricecakeProducts[1], ricecakeProducts[2]], // Set 1
+    [ricecakeProducts[3], ricecakeProducts[4], ricecakeProducts[5]], // Set 2
+    [ricecakeProducts[2], ricecakeProducts[0], ricecakeProducts[4]], // Set 3
+    [ricecakeProducts[1], ricecakeProducts[5], ricecakeProducts[3]]  // Set 4
+  ];
+
+  // Auto-cycle through image sets every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageSet((prev) => (prev + 1) % imageSets.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [imageSets.length]);
+
+  return (
+    <div className="min-h-screen bg-gray-50 font-sans pt-16">
+      
+            {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center">
+        <Image
+                src="/sub_logo.png"
+                alt="메고지고 로고"
+                width={120}
+                height={40}
+                className="h-8 w-auto mt-1.5 transition-transform duration-300 hover:scale-105"
+              />
+            </div>
+            <div className="flex items-center space-x-4">
+              {/* Navigation Links */}
+              <div className="hidden md:flex items-baseline space-x-6">
+                <button onClick={handleProductsClick} className="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-all duration-300 hover:bg-gray-50 rounded-lg transform hover:-translate-y-0.5">제품</button>
+                <button onClick={handleContactClick} className="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-all duration-300 hover:bg-gray-50 rounded-lg transform hover:-translate-y-0.5">연락처</button>
+              </div>
+              
+              {/* Social Media Buttons */}
+                                    <div className="flex space-x-3">
+                        <button
+                          onClick={handleKakaoClick}
+                          className="bg-gray-200 hover:bg-yellow-400 hover:text-gray-900 px-4 py-2 rounded-lg transition-all duration-300 flex items-center space-x-2 transform hover:scale-105 hover:shadow-md"
+                          aria-label="카카오톡 떡사장 채널"
+                        >
+                          <svg className="w-4 h-4 text-gray-700 transition-transform duration-300 group-hover:rotate-12" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 3c5.799 0 10.5 3.664 10.5 8.185 0 4.52-4.701 8.184-10.5 8.184a13.5 13.5 0 0 1-1.727-.11l-4.408 2.883c-.501.265-.678.236-.472-.413l.892-3.678c-2.88-1.46-4.785-3.99-4.785-6.866C1.5 6.665 6.201 3 12 3z"/>
+                          </svg>
+                          <span className="text-gray-700 text-sm font-medium hidden sm:block">카카오</span>
+                        </button>
+                        <button
+                          onClick={handleInstagramClick}
+                          className="bg-gray-200 hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:text-white px-4 py-2 rounded-lg transition-all duration-300 flex items-center space-x-2 transform hover:scale-105 hover:shadow-md"
+                          aria-label="인스타그램 DSJ152"
+                        >
+                          <svg className="w-4 h-4 text-gray-700 hover:text-white transition-all duration-300" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                          </svg>
+                          <span className="text-gray-700 hover:text-white text-sm font-medium hidden sm:block transition-colors duration-300">인스타그램</span>
+                        </button>
+                      </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      </nav>
+
+                        {/* Hero Section */}
+            <section className="relative bg-white overflow-hidden">
+              <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+                <div className="text-center">
+                  <div className="mb-8 animate-fade-in-up">
+                    <Image
+                      src="/megojigo_MAINLOGO.png"
+                      alt="메고지고 메인 로고"
+                      width={600}
+                      height={240}
+                      priority
+                      className="mx-auto h-40 w-auto lg:h-52 transition-transform duration-700 hover:scale-105"
+                    />
+                  </div>
+                  <p className="text-xl md:text-2xl lg:text-3xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed font-medium animate-fade-in-up-delay">
+                    전통의 가치와 현대의 감각이 만나 정성스럽게 빚어낸 프리미엄 한국 떡
+                  </p>
+                  <div className="animate-fade-in-up-delay">
+                    <div className="flex items-center justify-center text-base md:text-lg text-gray-500">
+                      <svg className="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      <span>경기도 남양주시 별내중앙로 10 (별내동), 아이파크스위트 상가 152호</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* 떡사장 Character Introduction Section */}
+            <section className="py-8 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-white via-gray-50 to-white opacity-80"></div>
+              <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex items-center justify-center gap-6 animate-fade-in-up">
+                  <div className="relative">
+                    <Image
+                      src="/person_logo.png"
+                      alt="떡사장 캐릭터"
+                      width={120}
+                      height={120}
+                      className="w-24 h-24 lg:w-28 lg:h-28 rounded-full border-4 border-brand-red/20 shadow-xl transition-transform duration-700 hover:scale-110"
+                    />
+                    <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-brand-red rounded-full flex items-center justify-center shadow-lg">
+                      <span className="text-white text-sm font-bold">떡</span>
+                    </div>
+                  </div>
+                  <div className="text-left">
+                    <h2 className="text-xl lg:text-2xl font-bold text-gray-900 mb-2">
+                      안녕하세요! <span className="text-brand-red text-2xl lg:text-3xl">떡사장</span>입니다
+                    </h2>
+                    <p className="text-base lg:text-lg text-gray-600 leading-relaxed">
+                      정성스럽게 만든 우리 떡을 소개해드릴게요
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+
+
+
+
+      {/* Gallery Section */}
+      <section className="py-8 bg-brand-red relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-red/95 to-brand-red/90"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center mb-6 animate-fade-in-up">
+            <h2 className="text-3xl font-bold text-white mb-3"><span className="text-4xl">떡사장</span>이 추천하는 떡 제품</h2>
+            <p className="text-sm text-white/80">정성스럽게 만든 전통 한국 떡</p>
+          </div>
+
+          {/* Animated 3-Image Gallery - Smooth Sliding */}
+          <div className="flex gap-4 max-w-6xl mx-auto mb-6 h-96">
+            {/* Big Image on Left - Sliding Animation */}
+            <div className="flex-1 group">
+                                          <div 
+                              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 h-full relative cursor-pointer"
+                              onClick={handleGalleryImageClick}
+                            >
+                          <div className="relative h-full overflow-hidden">
+                            {imageSets.map((set, setIndex) => (
+                              <div
+                                key={setIndex}
+                                className="absolute inset-0 transition-transform duration-1000 ease-in-out"
+                                style={{
+                                  transform: `translateX(${(setIndex - currentImageSet) * 100}%)`
+                                }}
         >
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+                                  src={set[0].image}
+                                  alt={set[0].name}
+                                  width={600}
+                                  height={450}
+                                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                />
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+            </div>
+            
+            {/* Two Images on Right - Sliding Animation */}
+            <div className="w-80 flex flex-col gap-4 h-full">
+              {[1, 2].map((position, posIndex) => (
+                                        <div key={posIndex} className="group" style={{height: 'calc(50% - 8px)'}}>
+                          <div 
+                            className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 h-full relative cursor-pointer"
+                            onClick={handleGalleryImageClick}
+                          >
+                            <div className="relative h-full overflow-hidden">
+                              {imageSets.map((set, setIndex) => (
+                                <div
+                                  key={setIndex}
+                                  className="absolute inset-0 transition-transform duration-1000 ease-in-out"
+                                  style={{
+                                    transform: `translateX(${(setIndex - currentImageSet) * 100}%)`
+                                  }}
         >
           <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+                                    src={set[position].image}
+                                    alt={set[position].name}
+                                    width={320}
+                                    height={180}
+                                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                  />
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+              ))}
+            </div>
+          </div>
+
+                            {/* Progress Indicators */}
+                  <div className="flex justify-center space-x-2 mb-4">
+                    {imageSets.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentImageSet(index)}
+                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                          index === currentImageSet
+                            ? 'bg-white scale-125'
+                            : 'bg-white/40 hover:bg-white/60'
+                        }`}
+                      />
+                    ))}
+                  </div>
+
+                                    {/* Simple View All Button */}
+                  <div className="text-center">
+                    <button 
+                      onClick={() => window.location.href = '/gallery'}
+                      className="bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
+                    >
+                      전체상품 보기
+                    </button>
+                    <p className="text-white/60 text-xs mt-2">이미지를 클릭해도 전체 상품을 확인할 수 있습니다</p>
+                  </div>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section className="py-8 bg-white relative overflow-hidden border-t-4 border-brand-red">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-50/50 to-white"></div>
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                                              <div className="text-center mb-6">
+                    <h2 className="text-3xl font-bold text-gray-900 mb-3 animate-fade-in-up-delay">
+                      <span className="text-4xl">떡사장</span>에게 문의
+                    </h2>
+                    <div className="flex items-center justify-center gap-2 mb-2 animate-fade-in-up-delay">
+                      <div className="inline-flex items-center justify-center w-6 h-6 bg-brand-red rounded-full">
+                        <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                      </div>
+                      <p className="text-lg font-semibold text-brand-red">031-528-0152</p>
+                    </div>
+                    <p className="text-sm text-gray-600 animate-fade-in-up-delay">궁금한 점이 있으시면 언제든지 연락주세요</p>
+                  </div>
+          
+                    <div className="max-w-xl mx-auto">
+            <form
+              onSubmit={handleSubmit}
+              className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 animate-slide-in-right"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                  className="px-3 py-2 rounded-lg border-2 border-gray-200 text-sm w-full font-medium focus:border-brand-red transition-all duration-300 placeholder-gray-400"
+                  placeholder="성함"
+                />
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  className="px-3 py-2 rounded-lg border-2 border-gray-200 text-sm w-full font-medium focus:border-brand-red transition-all duration-300 placeholder-gray-400"
+                  placeholder="연락처"
+                />
+              </div>
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
+                required
+                rows={3}
+                className="px-3 py-2 rounded-lg border-2 border-gray-200 text-sm w-full font-medium focus:border-brand-red transition-all duration-300 placeholder-gray-400 mb-4 resize-none"
+                placeholder="문의 내용을 자세히 적어주세요"
+              />
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-brand-red text-white hover:bg-red-700 px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                                        {isSubmitting ? '전송중...' : '문의하기'}
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer id="footer" className="bg-gray-100 py-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {/* Logo Section */}
+            <div className="text-center md:text-left">
+              <div className="mb-4">
           <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+                  src="/megojigo_SUBLOGO.png"
+                  alt="메고지고 로고"
+                  width={120}
+                  height={40}
+                  className="h-8 w-auto mx-auto md:mx-0 opacity-70"
+                />
+              </div>
+              <p className="text-gray-600 text-sm">
+                전통과 현대가 만나는<br />
+                프리미엄 한국 떡
+              </p>
+            </div>
+
+            {/* Contact Information */}
+            <div className="text-center md:text-left">
+              <h3 className="text-base font-semibold text-gray-900 mb-3">연락처</h3>
+              <div className="space-y-2 text-gray-600">
+                <div className="flex items-center justify-center md:justify-start">
+                  <svg className="w-5 h-5 mr-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  <span className="text-sm">031-528-0152</span>
+                </div>
+                <div className="flex items-center justify-center md:justify-start">
+                  <svg className="w-5 h-5 mr-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <span className="text-sm">dsj152@naver.com</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Location */}
+            <div className="text-center md:text-left lg:col-span-1 md:col-span-2 lg:col-span-1">
+              <h3 className="text-base font-semibold text-gray-900 mb-3">위치</h3>
+              <div className="flex items-start justify-center md:justify-start">
+                <svg className="w-5 h-5 mr-3 mt-0.5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <div className="text-sm text-gray-600 leading-relaxed">
+                  경기도 남양주시 별내중앙로 10<br />
+                  (별내동)<br />
+                  아이파크스위트 상가 152호
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Section */}
+          <div className="border-t border-gray-200 mt-6 pt-4 text-center">
+            <p className="text-sm text-gray-500">
+              © 2024 메고지고. 모든 권리 보유.
+            </p>
+          </div>
+        </div>
       </footer>
     </div>
   );
