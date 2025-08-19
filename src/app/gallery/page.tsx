@@ -319,12 +319,7 @@ export default function Gallery() {
             </div>
           </div>
 
-          {/* Bottom Section */}
-          <div className="border-t border-gray-200 mt-6 pt-4 text-center">
-            <p className="text-sm text-gray-500">
-              © 2024 메고지고. 모든 권리 보유.
-            </p>
-          </div>
+
         </div>
       </footer>
     </div>
