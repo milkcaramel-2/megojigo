@@ -6,7 +6,7 @@ import Image from 'next/image';
 export default function Gallery() {
   const [selectedCategory, setSelectedCategory] = useState('전체');
 
-  const categories = ['전체', '크림떡'];
+  const categories = ['전체', '크림떡', '찹쌀떡'];
 
   const ricecakeProducts = [
     { 
@@ -120,6 +120,110 @@ export default function Gallery() {
       extendedDescription: "고소하고 부드러운 피스타치오 크림떡.\n녹색의 자연스러운 빛깔과 풍부한 맛.",
       image: "/grid_img/cream/pica.jpg", 
       category: "크림떡" 
+    },
+    { 
+      id: 15, 
+      name: "껍질째 먹는 군고구마떡", 
+      description: "달콤한 고구마의 자연스러운 맛", 
+      extendedDescription: "껍질째 구운 고구마의 진한 단맛.\n자연스럽고 건강한 달콤함.",
+      image: "/grid_img/chapsal/goguma.jpg", 
+      category: "찹쌀떡" 
+    },
+    { 
+      id: 16, 
+      name: "라이스파이", 
+      description: "바삭한 파이와 쫄깃한 떡", 
+      extendedDescription: "바삭한 파이 껍질과 쫄깃한 찹쌀떡.\n독특한 식감의 새로운 경험.",
+      image: "/grid_img/chapsal/ricepie.jpg", 
+      category: "찹쌀떡" 
+    },
+    { 
+      id: 17, 
+      name: "렌틸콩 찹쌀떡", 
+      description: "건강한 렌틸콩의 영양", 
+      extendedDescription: "영양가 풍부한 렌틸콩과 찹쌀떡.\n건강과 맛을 동시에 잡은 웰빙 떡.",
+      image: "/grid_img/chapsal/lentilkong.jpg", 
+      category: "찹쌀떡" 
+    },
+    { 
+      id: 18, 
+      name: "망개떡", 
+      description: "전통 망개잎의 향긋함", 
+      extendedDescription: "망개잎으로 감싼 전통 떡.\n자연의 향긋함과 쫄깃한 식감.",
+      image: "/grid_img/chapsal/manggae.jpg", 
+      category: "찹쌀떡" 
+    },
+    { 
+      id: 19, 
+      name: "바나나찹쌀떡", 
+      description: "달콤한 바나나의 부드러움", 
+      extendedDescription: "신선한 바나나와 쫄깃한 찹쌀떡.\n자연스러운 달콤함과 부드러운 식감.",
+      image: "/grid_img/chapsal/banana.jpg", 
+      category: "찹쌀떡" 
+    },
+    { 
+      id: 20, 
+      name: "벗겨바나나떡", 
+      description: "껍질 벗긴 바나나의 순수함", 
+      extendedDescription: "껍질을 벗긴 바나나 모양의 특별한 떡.\n시각적 재미와 달콤한 바나나 맛.",
+      image: "/grid_img/chapsal/butbanana.jpg", 
+      category: "찹쌀떡" 
+    },
+    { 
+      id: 21, 
+      name: "쑥 찹쌀떡", 
+      description: "쑥의 자연스러운 향", 
+      extendedDescription: "신선한 쑥을 넣어 만든 건강한 떡.\n쑥 특유의 향긋함과 자연스러운 녹색.",
+      image: "/grid_img/chapsal/ssuk.jpg", 
+      category: "찹쌀떡" 
+    },
+    { 
+      id: 22, 
+      name: "아몬드찹쌀떡", 
+      description: "고소한 아몬드의 풍미", 
+      extendedDescription: "고급 아몬드를 넣어 만든 영양 떡.\n고소함과 쫄깃함의 완벽한 조화.",
+      image: "/grid_img/chapsal/almond.jpg", 
+      category: "찹쌀떡" 
+    },
+    { 
+      id: 23, 
+      name: "오메기떡", 
+      description: "제주도 전통 오메기떡", 
+      extendedDescription: "제주도 특산 오메기떡의 전통 맛.\n쫄깃하고 담백한 제주의 향토 떡.",
+      image: "/grid_img/chapsal/omegi.jpg", 
+      category: "찹쌀떡" 
+    },
+    { 
+      id: 24, 
+      name: "잣부심찹쌀떡", 
+      description: "잣의 고급스러운 풍미", 
+      extendedDescription: "고급 잣을 넣어 만든 부심 떡.\n잣의 고소함과 부드러운 식감.",
+      image: "/grid_img/chapsal/jjatbushim.jpg", 
+      category: "찹쌀떡" 
+    },
+    { 
+      id: 25, 
+      name: "통째로 생딸기모찌", 
+      description: "통딸기가 들어간 모찌", 
+      extendedDescription: "신선한 딸기를 통째로 넣은 모찌.\n과즙이 터지는 상큼한 맛.",
+      image: "/grid_img/chapsal/strawberrymojji.jpg", 
+      category: "찹쌀떡" 
+    },
+    { 
+      id: 26, 
+      name: "통째로 샤인머스캣모찌", 
+      description: "프리미엄 샤인머스캣 모찌", 
+      extendedDescription: "고급 샤인머스캣을 통째로 넣은 모찌.\n달콤하고 향긋한 포도의 풍미.",
+      image: "/grid_img/chapsal/shinemusketmojji.jpg", 
+      category: "찹쌀떡" 
+    },
+    { 
+      id: 27, 
+      name: "호박 찹쌀떡", 
+      description: "달콤한 호박의 자연스러운 맛", 
+      extendedDescription: "신선한 호박을 넣어 만든 건강한 떡.\n호박의 자연스러운 단맛과 부드러운 식감.",
+      image: "/grid_img/chapsal/pumpkin.jpg", 
+      category: "찹쌀떡" 
     }
   ];
 
@@ -139,15 +243,15 @@ export default function Gallery() {
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
               <button onClick={handleBackToHome} className="flex items-center mr-4 transition-transform duration-300 hover:scale-105">
-                <Image
-                  src="/megojigo_SUBLOGO.png"
-                  alt="메고지고 서브 로고"
-                  width={80}
-                  height={32}
+              <Image
+                src="/megojigo_SUBLOGO.png"
+                alt="메고지고 서브 로고"
+                width={80}
+                height={32}
                   className="h-8 w-auto"
-                />
+              />
               </button>
-              <h1 className="text-xl font-bold text-gray-900">크림떡 갤러리</h1>
+              <h1 className="text-xl font-bold text-gray-900">떡 갤러리</h1>
             </div>
             <button 
               onClick={handleBackToHome}
@@ -163,10 +267,10 @@ export default function Gallery() {
       <section className="bg-brand-red py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            <span className="text-5xl lg:text-6xl">떡사장</span>의 프리미엄 크림떡
+            <span className="text-5xl lg:text-6xl">떡사장</span>의 특별한 떡 컬렉션
           </h1>
-          <p className="text-xl text-white/90 mb-2">부드러운 크림과 쫄깃한 떡의 완벽한 조화</p>
-          <p className="text-white/70 text-sm">다양한 맛의 크림떡을 만나보세요</p>
+          <p className="text-xl text-white/90 mb-2">크림떡과 찹쌀떡의 다양한 맛을 만나보세요</p>
+          <p className="text-white/70 text-sm">카테고리를 선택하여 원하시는 떡을 찾아보세요</p>
         </div>
       </section>
 
@@ -240,10 +344,10 @@ export default function Gallery() {
       <section className="py-12 bg-brand-red">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-            <span className="text-4xl lg:text-5xl">떡사장</span>에게 크림떡을 주문하세요
+            <span className="text-4xl lg:text-5xl">떡사장</span>에게 주문하세요
           </h2>
           <p className="text-xl text-white/90 mb-8">
-            원하시는 크림떡이 있으시면 언제든지 연락주세요
+            원하시는 떡이 있으시면 언제든지 연락주세요
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
