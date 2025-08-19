@@ -138,13 +138,15 @@ export default function Gallery() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
-              <Image
-                src="/megojigo_SUBLOGO.png"
-                alt="메고지고 서브 로고"
-                width={80}
-                height={32}
-                className="h-8 w-auto mr-4"
-              />
+              <button onClick={handleBackToHome} className="flex items-center mr-4 transition-transform duration-300 hover:scale-105">
+                <Image
+                  src="/megojigo_SUBLOGO.png"
+                  alt="메고지고 서브 로고"
+                  width={80}
+                  height={32}
+                  className="h-8 w-auto"
+                />
+              </button>
               <h1 className="text-xl font-bold text-gray-900">크림떡 갤러리</h1>
             </div>
             <button 
