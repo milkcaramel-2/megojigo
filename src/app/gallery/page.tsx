@@ -36,16 +36,16 @@ export default function Gallery() {
     { 
       id: 4, 
       name: "카다이프 초코찹쌀떡", 
-      description: "중동식 카다이프의 특별함", 
-      extendedDescription: "Crispy Middle Eastern noodles with chocolate.\nUnique texture and exotic flavor.",
+      description: "카다이프의 특별한 식감", 
+      extendedDescription: "바삭한 면 식감과 진한 초콜릿 맛.\n독특하고 새로운 식감의 만남.",
       image: "/grid_img/cream/cadaiff.jpg", 
       category: "크림떡" 
     },
     { 
       id: 5, 
       name: "밤티라미수떡", 
-      description: "이탈리아 디저트의 한국적 해석", 
-      extendedDescription: "Italian dessert meets Korean chestnut.\nCoffee aroma with creamy mascarpone.",
+      description: "티라미수와 밤의 조화", 
+      extendedDescription: "부드러운 밤과 티라미수 크림.\n커피 향이 은은한 고급 디저트.",
       image: "/grid_img/cream/bamtiramisu.jpg", 
       category: "크림떡" 
     },
@@ -60,8 +60,8 @@ export default function Gallery() {
     { 
       id: 7, 
       name: "찹쌀빙고 말차", 
-      description: "일본식 말차의 깊은 향", 
-      extendedDescription: "Premium Japanese matcha with cream.\nBitter-sweet balance and rich aroma.",
+      description: "말차의 깊은 향", 
+      extendedDescription: "프리미엄 말차와 부드러운 크림.\n은은한 쓴맛과 단맛의 절묘한 조화.",
       image: "/grid_img/cream/malcha.jpg", 
       category: "크림떡" 
     },
@@ -76,8 +76,8 @@ export default function Gallery() {
     { 
       id: 9, 
       name: "카이막떡", 
-      description: "중동식 카이막 크림", 
-      extendedDescription: "Traditional Middle Eastern kaimak cream.\nRich and unique exotic flavor.",
+      description: "카이막 크림의 진한 맛", 
+      extendedDescription: "전통 카이막 크림의 진한 풍미.\n독특하고 진한 맛의 경험.",
       image: "/grid_img/cream/kaimac.jpg", 
       category: "크림떡" 
     },
@@ -108,16 +108,16 @@ export default function Gallery() {
     { 
       id: 13, 
       name: "크런치돼지떡", 
-      description: "귀여운 돼지 모양의 특별함", 
-      extendedDescription: "Cute pig-shaped rice cake with crunch.\nFun texture and sweet flavor.",
+      description: "돼지바 아이스크림 맛", 
+      extendedDescription: "인기 돼지바 아이스크림을 연상시킨 맛.\n바삭한 크런치와 부드러운 크림의 조화.",
       image: "/grid_img/cream/piggy.jpg", 
       category: "크림떡" 
     },
     { 
       id: 14, 
       name: "피카찹쌀떡", 
-      description: "포켓몬 피카츄 모양의 즐거움", 
-      extendedDescription: "Yellow Pikachu-shaped rice cake with cream.\nFun character treat for kids.",
+      description: "피스타치오의 고소한 맛", 
+      extendedDescription: "고소하고 부드러운 피스타치오 크림떡.\n녹색의 자연스러운 빛깔과 풍부한 맛.",
       image: "/grid_img/cream/pica.jpg", 
       category: "크림떡" 
     }
