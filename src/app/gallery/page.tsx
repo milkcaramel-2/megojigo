@@ -12,7 +12,7 @@ export default function Gallery() {
     { 
       id: 1, 
       name: "두바이초콜릿찹쌀떡", 
-      description: "Dubai Chocolate Glutinous Rice Cake", 
+      description: "두바이 초콜릿의 특별한 맛", 
       extendedDescription: "Premium Middle Eastern chocolate meets Korean rice cake.\nRich chocolate flavor with chewy texture.",
       image: "/grid_img/cream/dubaichocolate.jpg", 
       category: "크림떡" 
@@ -20,7 +20,7 @@ export default function Gallery() {
     { 
       id: 2, 
       name: "치즈떡", 
-      description: "Cheese Cream Rice Cake", 
+      description: "부드러운 치즈 크림의 조화", 
       extendedDescription: "Fresh cheese meets soft rice cake.\nCreamy texture with savory taste.",
       image: "/grid_img/cream/cheese.jpg", 
       category: "크림떡" 
@@ -28,7 +28,7 @@ export default function Gallery() {
     { 
       id: 3, 
       name: "딸기크림떡", 
-      description: "Strawberry Cream Rice Cake", 
+      description: "상큼한 딸기의 달콤함", 
       extendedDescription: "Sweet and tangy strawberry with smooth cream.\nPerfect spring flavor combination.",
       image: "/grid_img/cream/Strawberrry.jpg", 
       category: "크림떡" 
@@ -36,7 +36,7 @@ export default function Gallery() {
     { 
       id: 4, 
       name: "카다이프 초코찹쌀떡", 
-      description: "Kadayif Chocolate Rice Cake", 
+      description: "중동식 카다이프의 특별함", 
       extendedDescription: "Crispy Middle Eastern noodles with chocolate.\nUnique texture and exotic flavor.",
       image: "/grid_img/cream/cadaiff.jpg", 
       category: "크림떡" 
@@ -44,7 +44,7 @@ export default function Gallery() {
     { 
       id: 5, 
       name: "밤티라미수떡", 
-      description: "Chestnut Tiramisu Rice Cake", 
+      description: "이탈리아 디저트의 한국적 해석", 
       extendedDescription: "Italian dessert meets Korean chestnut.\nCoffee aroma with creamy mascarpone.",
       image: "/grid_img/cream/bamtiramisu.jpg", 
       category: "크림떡" 
@@ -52,7 +52,7 @@ export default function Gallery() {
     { 
       id: 6, 
       name: "인절미크림떡", 
-      description: "Injeolmi Cream Rice Cake", 
+      description: "전통과 현대의 만남", 
       extendedDescription: "Traditional soybean powder meets modern cream.\nNutty and sweet fusion flavor.",
       image: "/grid_img/cream/injulmicream.jpg", 
       category: "크림떡" 
@@ -60,7 +60,7 @@ export default function Gallery() {
     { 
       id: 7, 
       name: "찹쌀빙고 말차", 
-      description: "Glutinous Rice Matcha Cream", 
+      description: "일본식 말차의 깊은 향", 
       extendedDescription: "Premium Japanese matcha with cream.\nBitter-sweet balance and rich aroma.",
       image: "/grid_img/cream/malcha.jpg", 
       category: "크림떡" 
@@ -68,7 +68,7 @@ export default function Gallery() {
     { 
       id: 8, 
       name: "찹쌀빙고 크림", 
-      description: "Glutinous Rice Classic Cream", 
+      description: "순수한 크림의 부드러움", 
       extendedDescription: "Pure fresh cream with glutinous rice.\nClassic flavor loved by everyone.",
       image: "/grid_img/cream/cream.jpg", 
       category: "크림떡" 
@@ -76,7 +76,7 @@ export default function Gallery() {
     { 
       id: 9, 
       name: "카이막떡", 
-      description: "Kaimak Cream Rice Cake", 
+      description: "중동식 카이막 크림", 
       extendedDescription: "Traditional Middle Eastern kaimak cream.\nRich and unique exotic flavor.",
       image: "/grid_img/cream/kaimac.jpg", 
       category: "크림떡" 
@@ -84,7 +84,7 @@ export default function Gallery() {
     { 
       id: 10, 
       name: "메론크림떡", 
-      description: "Melon Cream Rice Cake", 
+      description: "여름 메론의 상큼함", 
       extendedDescription: "Sweet summer melon with smooth cream.\nRefreshing and cooling taste.",
       image: "/grid_img/cream/melonc.jpg", 
       category: "크림떡" 
@@ -92,7 +92,7 @@ export default function Gallery() {
     { 
       id: 11, 
       name: "그릭요거떡", 
-      description: "Greek Yogurt Rice Cake", 
+      description: "건강한 그릭요거트의 맛", 
       extendedDescription: "Healthy Greek yogurt with probiotics.\nTangy and refreshing wellness treat.",
       image: "/grid_img/cream/greekyogurt.jpg", 
       category: "크림떡" 
@@ -100,7 +100,7 @@ export default function Gallery() {
     { 
       id: 12, 
       name: "초코크림떡", 
-      description: "Chocolate Cream Rice Cake", 
+      description: "클래식 초콜릿의 진한 맛", 
       extendedDescription: "Rich chocolate cream with chewy rice cake.\nClassic flavor for chocolate lovers.",
       image: "/grid_img/cream/chocolate.jpg", 
       category: "크림떡" 
@@ -108,7 +108,7 @@ export default function Gallery() {
     { 
       id: 13, 
       name: "크런치돼지떡", 
-      description: "Crunchy Pig Rice Cake", 
+      description: "귀여운 돼지 모양의 특별함", 
       extendedDescription: "Cute pig-shaped rice cake with crunch.\nFun texture and sweet flavor.",
       image: "/grid_img/cream/piggy.jpg", 
       category: "크림떡" 
@@ -116,7 +116,7 @@ export default function Gallery() {
     { 
       id: 14, 
       name: "피카찹쌀떡", 
-      description: "Pikachu Rice Cake", 
+      description: "포켓몬 피카츄 모양의 즐거움", 
       extendedDescription: "Yellow Pikachu-shaped rice cake with cream.\nFun character treat for kids.",
       image: "/grid_img/cream/pica.jpg", 
       category: "크림떡" 
