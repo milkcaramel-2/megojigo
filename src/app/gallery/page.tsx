@@ -13,7 +13,7 @@ export default function Gallery() {
       id: 1, 
       name: "두바이초콜릿찹쌀떡", 
       description: "두바이 초콜릿의 특별한 맛", 
-      extendedDescription: "Premium Middle Eastern chocolate meets Korean rice cake.\nRich chocolate flavor with chewy texture.",
+      extendedDescription: "프리미엄 두바이 초콜릿과 쫄깃한 찹쌀떡.\n진한 초콜릿 향과 부드러운 식감.",
       image: "/grid_img/cream/dubaichocolate.jpg", 
       category: "크림떡" 
     },
@@ -21,7 +21,7 @@ export default function Gallery() {
       id: 2, 
       name: "치즈떡", 
       description: "부드러운 치즈 크림의 조화", 
-      extendedDescription: "Fresh cheese meets soft rice cake.\nCreamy texture with savory taste.",
+      extendedDescription: "신선한 치즈와 부드러운 떡의 만남.\n크리미한 식감과 고소한 맛.",
       image: "/grid_img/cream/cheese.jpg", 
       category: "크림떡" 
     },
@@ -29,7 +29,7 @@ export default function Gallery() {
       id: 3, 
       name: "딸기크림떡", 
       description: "상큼한 딸기의 달콤함", 
-      extendedDescription: "Sweet and tangy strawberry with smooth cream.\nPerfect spring flavor combination.",
+      extendedDescription: "달콤한 딸기와 부드러운 크림의 조화.\n봄의 상큼함을 담은 완벽한 맛.",
       image: "/grid_img/cream/Strawberrry.jpg", 
       category: "크림떡" 
     },
@@ -53,7 +53,7 @@ export default function Gallery() {
       id: 6, 
       name: "인절미크림떡", 
       description: "전통과 현대의 만남", 
-      extendedDescription: "Traditional soybean powder meets modern cream.\nNutty and sweet fusion flavor.",
+      extendedDescription: "전통 콩가루와 현대적 크림의 만남.\n고소하고 달콤한 퓨전 맛.",
       image: "/grid_img/cream/injulmicream.jpg", 
       category: "크림떡" 
     },
@@ -69,7 +69,7 @@ export default function Gallery() {
       id: 8, 
       name: "찹쌀빙고 크림", 
       description: "순수한 크림의 부드러움", 
-      extendedDescription: "Pure fresh cream with glutinous rice.\nClassic flavor loved by everyone.",
+      extendedDescription: "순수한 생크림과 쫄깃한 찹쌀떡.\n모두가 사랑하는 클래식한 맛.",
       image: "/grid_img/cream/cream.jpg", 
       category: "크림떡" 
     },
@@ -85,7 +85,7 @@ export default function Gallery() {
       id: 10, 
       name: "메론크림떡", 
       description: "여름 메론의 상큼함", 
-      extendedDescription: "Sweet summer melon with smooth cream.\nRefreshing and cooling taste.",
+      extendedDescription: "달콤한 여름 메론과 부드러운 크림.\n상쾌하고 시원한 맛.",
       image: "/grid_img/cream/melonc.jpg", 
       category: "크림떡" 
     },
@@ -93,7 +93,7 @@ export default function Gallery() {
       id: 11, 
       name: "그릭요거떡", 
       description: "건강한 그릭요거트의 맛", 
-      extendedDescription: "Healthy Greek yogurt with probiotics.\nTangy and refreshing wellness treat.",
+      extendedDescription: "건강한 그릭요거트와 프로바이오틱스.\n상큼하고 건강한 웰빙 떡.",
       image: "/grid_img/cream/greekyogurt.jpg", 
       category: "크림떡" 
     },
@@ -101,7 +101,7 @@ export default function Gallery() {
       id: 12, 
       name: "초코크림떡", 
       description: "클래식 초콜릿의 진한 맛", 
-      extendedDescription: "Rich chocolate cream with chewy rice cake.\nClassic flavor for chocolate lovers.",
+      extendedDescription: "진한 초콜릿 크림과 쫄깃한 떡.\n초콜릿 애호가를 위한 클래식 맛.",
       image: "/grid_img/cream/chocolate.jpg", 
       category: "크림떡" 
     },
