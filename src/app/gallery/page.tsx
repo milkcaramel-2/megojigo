@@ -6,104 +6,120 @@ import Image from 'next/image';
 export default function Gallery() {
   const [selectedCategory, setSelectedCategory] = useState('전체');
 
-  const categories = ['전체', '전통떡', '현대떡', '축하떡', '계절떡'];
+  const categories = ['전체', '크림떡'];
 
   const ricecakeProducts = [
     { 
       id: 1, 
-      name: "백설기", 
-      description: "부드럽고 촉촉한 전통 떡", 
-      extendedDescription: "순수한 멥쌀로만 만든 정통 백설기입니다.\n부드러운 식감과 은은한 단맛이 특징이며,\n전통 제조법으로 정성껏 쪄낸 고급 떡입니다.\n모든 연령층이 좋아하는 대표적인 한국 떡입니다.",
-      image: "/gallery1.jpg", 
-      category: "전통떡" 
+      name: "두바이초콜릿찹쌀떡", 
+      description: "Dubai Chocolate Glutinous Rice Cake", 
+      extendedDescription: "Premium Middle Eastern chocolate meets Korean rice cake.\nRich chocolate flavor with chewy texture.",
+      image: "/grid_img/cream/dubaichocolate.jpg", 
+      category: "크림떡" 
     },
     { 
       id: 2, 
-      name: "무지개떡", 
-      description: "화려한 색감의 축하용 떡", 
-      extendedDescription: "천연 색소로 만든 아름다운 일곱 색깔의 떡입니다.\n생일, 돌잔치, 결혼식 등 특별한 날을 위한 떡으로,\n보기에도 아름답고 맛도 뛰어난 축하용 떡입니다.\n각 층마다 다른 맛과 향을 느낄 수 있습니다.",
-      image: "/gallery2.jpg", 
-      category: "축하떡" 
+      name: "치즈떡", 
+      description: "Cheese Cream Rice Cake", 
+      extendedDescription: "Fresh cheese meets soft rice cake.\nCreamy texture with savory taste.",
+      image: "/grid_img/cream/cheese.jpg", 
+      category: "크림떡" 
     },
     { 
       id: 3, 
-      name: "팥떡", 
-      description: "달콤한 팥앙금 떡", 
-      extendedDescription: "엄선된 국산 팥으로 직접 만든 고운 팥앙금과\n쫄깃한 떡의 완벽한 조화를 이룬 떡입니다.\n당도를 적절히 조절하여 남녀노소 누구나\n부담 없이 즐길 수 있는 건강한 전통 떡입니다.",
-      image: "/gallery3.jpg", 
-      category: "전통떡" 
+      name: "딸기크림떡", 
+      description: "Strawberry Cream Rice Cake", 
+      extendedDescription: "Sweet and tangy strawberry with smooth cream.\nPerfect spring flavor combination.",
+      image: "/grid_img/cream/Strawberrry.jpg", 
+      category: "크림떡" 
     },
     { 
       id: 4, 
-      name: "참깨떡", 
-      description: "고소한 참깨 풍미", 
-      extendedDescription: "볶은 참깨의 진한 고소함이 가득한 영양 떡입니다.\n참깨의 풍부한 영양과 고소한 맛이 어우러져\n건강과 맛을 동시에 잡은 웰빙 떡입니다.\n씹을수록 진해지는 참깨 향이 일품입니다.",
-      image: "/gallery4.jpg", 
-      category: "전통떡" 
+      name: "카다이프 초코찹쌀떡", 
+      description: "Kadayif Chocolate Rice Cake", 
+      extendedDescription: "Crispy Middle Eastern noodles with chocolate.\nUnique texture and exotic flavor.",
+      image: "/grid_img/cream/cadaiff.jpg", 
+      category: "크림떡" 
     },
     { 
       id: 5, 
-      name: "꽃떡", 
-      description: "아름다운 꽃 장식 떡", 
-      extendedDescription: "섬세한 손길로 하나하나 만든 꽃 모양 장식 떡입니다.\n시각적인 아름다움과 맛의 조화를 이룬 예술품 같은 떡으로,\n특별한 날의 테이블을 화사하게 장식해줍니다.\n먹기 아까울 정도로 정교하고 아름다운 떡입니다.",
-      image: "/gallery5.jpg", 
-      category: "축하떡" 
+      name: "밤티라미수떡", 
+      description: "Chestnut Tiramisu Rice Cake", 
+      extendedDescription: "Italian dessert meets Korean chestnut.\nCoffee aroma with creamy mascarpone.",
+      image: "/grid_img/cream/bamtiramisu.jpg", 
+      category: "크림떡" 
     },
     { 
       id: 6, 
-      name: "퓨전떡", 
-      description: "전통과 현대의 만남", 
-      extendedDescription: "전통 떡 제조법에 현대적 감각을 더한 혁신적인 떡입니다.\n다양한 맛과 식감을 경험할 수 있는 창의적인 떡으로,\n젊은 세대부터 어른까지 모두가 만족하는 새로운 떡입니다.\n색다른 떡의 매력을 느낄 수 있는 특별한 제품입니다.",
-      image: "/gallery6.jpg", 
-      category: "현대떡" 
+      name: "인절미크림떡", 
+      description: "Injeolmi Cream Rice Cake", 
+      extendedDescription: "Traditional soybean powder meets modern cream.\nNutty and sweet fusion flavor.",
+      image: "/grid_img/cream/injulmicream.jpg", 
+      category: "크림떡" 
     },
     { 
       id: 7, 
-      name: "송편", 
-      description: "추석 전통 떡", 
-      extendedDescription: "한국의 대표적인 명절 떡인 송편입니다.\n솔잎의 향긋함과 함께 쪄낸 전통 그대로의 맛으로,\n팥, 깨, 콩 등 다양한 소를 넣어 만든 정성스러운 떡입니다.\n추석 명절의 따뜻한 정을 담은 전통의 맛입니다.",
-      image: "/gallery1.jpg", 
-      category: "계절떡" 
+      name: "찹쌀빙고 말차", 
+      description: "Glutinous Rice Matcha Cream", 
+      extendedDescription: "Premium Japanese matcha with cream.\nBitter-sweet balance and rich aroma.",
+      image: "/grid_img/cream/malcha.jpg", 
+      category: "크림떡" 
     },
     { 
       id: 8, 
-      name: "인절미", 
-      description: "콩가루 묻힌 쫄깃한 떡", 
-      extendedDescription: "쫄깃한 떡에 고소한 콩가루를 듬뿍 묻힌 전통 떡입니다.\n입 안에서 퍼지는 고소함과 쫄깃한 식감이 일품이며,\n옛날 할머니가 만들어주시던 그 맛 그대로입니다.\n누구나 좋아하는 대표적인 한국 전통 떡입니다.",
-      image: "/gallery2.jpg", 
-      category: "전통떡" 
+      name: "찹쌀빙고 크림", 
+      description: "Glutinous Rice Classic Cream", 
+      extendedDescription: "Pure fresh cream with glutinous rice.\nClassic flavor loved by everyone.",
+      image: "/grid_img/cream/cream.jpg", 
+      category: "크림떡" 
     },
     { 
       id: 9, 
-      name: "모듬떡", 
-      description: "다양한 떡의 조화", 
-      extendedDescription: "여러 종류의 떡을 한 번에 맛볼 수 있는 세트 상품입니다.\n백설기, 팥떡, 참깨떡 등 다양한 떡이 포함되어\n선택의 고민 없이 다양한 맛을 즐길 수 있습니다.\n가족 모임이나 손님 접대용으로 인기가 높은 상품입니다.",
-      image: "/gallery3.jpg", 
-      category: "현대떡" 
+      name: "카이막떡", 
+      description: "Kaimak Cream Rice Cake", 
+      extendedDescription: "Traditional Middle Eastern kaimak cream.\nRich and unique exotic flavor.",
+      image: "/grid_img/cream/kaimac.jpg", 
+      category: "크림떡" 
     },
     { 
       id: 10, 
-      name: "단팥떡", 
-      description: "진한 단팥의 맛", 
-      extendedDescription: "정성껏 삶은 팥으로 만든 진짜 단팥 맛의 떡입니다.\n인공 감미료를 사용하지 않고 팥 본연의 단맛만을 살려\n건강하고 자연스러운 달콤함을 느낄 수 있습니다.\n어린이부터 어른까지 안심하고 드실 수 있는 건강 떡입니다.",
-      image: "/gallery4.jpg", 
-      category: "전통떡" 
+      name: "메론크림떡", 
+      description: "Melon Cream Rice Cake", 
+      extendedDescription: "Sweet summer melon with smooth cream.\nRefreshing and cooling taste.",
+      image: "/grid_img/cream/melonc.jpg", 
+      category: "크림떡" 
     },
     { 
       id: 11, 
-      name: "생크림떡", 
-      description: "부드러운 생크림 떡", 
-      extendedDescription: "신선한 생크림을 넣어 만든 부드럽고 촉촉한 떡입니다.\n전통 떡에 서양 디저트의 요소를 접목시킨 혁신적인 떡으로,\n새로운 식감과 맛을 경험할 수 있는 모던한 떡입니다.\n특별한 날 디저트로도 완벽한 프리미엄 떡입니다.",
-      image: "/gallery5.jpg", 
-      category: "현대떡" 
+      name: "그릭요거떡", 
+      description: "Greek Yogurt Rice Cake", 
+      extendedDescription: "Healthy Greek yogurt with probiotics.\nTangy and refreshing wellness treat.",
+      image: "/grid_img/cream/greekyogurt.jpg", 
+      category: "크림떡" 
     },
     { 
       id: 12, 
-      name: "약식", 
-      description: "달콤한 약식", 
-      extendedDescription: "찹쌀에 대추, 밤, 견과류를 넣고 정성껏 만든 전통 약식입니다.\n영양가가 풍부하고 자연스러운 단맛이 일품인 건강식으로,\n예로부터 귀한 손님을 위한 특별한 음식으로 여겨졌습니다.\n명절이나 특별한 날에 어울리는 고급스러운 전통 떡입니다.",
-      image: "/gallery6.jpg", 
-      category: "계절떡" 
+      name: "초코크림떡", 
+      description: "Chocolate Cream Rice Cake", 
+      extendedDescription: "Rich chocolate cream with chewy rice cake.\nClassic flavor for chocolate lovers.",
+      image: "/grid_img/cream/chocolate.jpg", 
+      category: "크림떡" 
+    },
+    { 
+      id: 13, 
+      name: "크런치돼지떡", 
+      description: "Crunchy Pig Rice Cake", 
+      extendedDescription: "Cute pig-shaped rice cake with crunch.\nFun texture and sweet flavor.",
+      image: "/grid_img/cream/piggy.jpg", 
+      category: "크림떡" 
+    },
+    { 
+      id: 14, 
+      name: "피카찹쌀떡", 
+      description: "Pikachu Rice Cake", 
+      extendedDescription: "Yellow Pikachu-shaped rice cake with cream.\nFun character treat for kids.",
+      image: "/grid_img/cream/pica.jpg", 
+      category: "크림떡" 
     }
   ];
 
@@ -129,7 +145,7 @@ export default function Gallery() {
                 height={32}
                 className="h-8 w-auto mr-4"
               />
-              <h1 className="text-xl font-bold text-gray-900">떡 갤러리</h1>
+              <h1 className="text-xl font-bold text-gray-900">크림떡 갤러리</h1>
             </div>
             <button 
               onClick={handleBackToHome}
@@ -145,10 +161,10 @@ export default function Gallery() {
       <section className="bg-brand-red py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            <span className="text-5xl lg:text-6xl">떡사장</span>의 모든 떡 제품
+            <span className="text-5xl lg:text-6xl">떡사장</span>의 프리미엄 크림떡
           </h1>
-          <p className="text-xl text-white/90 mb-2">정성스럽게 만든 전통과 현대의 떡을 모두 만나보세요</p>
-          <p className="text-white/70 text-sm">카테고리를 선택하여 원하시는 떡을 찾아보세요</p>
+          <p className="text-xl text-white/90 mb-2">부드러운 크림과 쫄깃한 떡의 완벽한 조화</p>
+          <p className="text-white/70 text-sm">다양한 맛의 크림떡을 만나보세요</p>
         </div>
       </section>
 
@@ -222,10 +238,10 @@ export default function Gallery() {
       <section className="py-12 bg-brand-red">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-            <span className="text-4xl lg:text-5xl">떡사장</span>에게 주문하세요
+            <span className="text-4xl lg:text-5xl">떡사장</span>에게 크림떡을 주문하세요
           </h2>
           <p className="text-xl text-white/90 mb-8">
-            원하시는 떡이 있으시면 언제든지 연락주세요
+            원하시는 크림떡이 있으시면 언제든지 연락주세요
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
