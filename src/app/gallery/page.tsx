@@ -395,7 +395,7 @@ export default function Gallery() {
       <section className="bg-brand-red py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            <span className="text-4xl md:text-5xl lg:text-6xl">떡사장</span>의 완벽한 떡 컬렉션
+            <span className="text-4xl md:text-5xl lg:text-6xl">떡사장</span>이 파는 떡
           </h1>
           <p className="text-lg md:text-xl text-white/90 mb-2">크림떡, 찹쌀떡, 전통떡의 모든 맛을 만나보세요</p>
           <p className="text-white/70 text-sm">총 43가지 다양한 떡을 카테고리별로 확인하세요</p>
@@ -545,7 +545,8 @@ export default function Gallery() {
                 <div className="text-sm text-gray-600 leading-relaxed">
                   경기도 남양주시 별내중앙로 10<br />
                   (별내동)<br />
-                  아이파크스위트 상가 152호
+                  아이파크스위트 상가 152호<br />
+                  롯데시네마 건너편
                 </div>
               </div>
             </div>
