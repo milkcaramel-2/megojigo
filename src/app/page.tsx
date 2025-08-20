@@ -258,19 +258,19 @@ export default function Home() {
                     <Image
                       src="/ttucksajang.png"
                       alt="떡사장 캐릭터"
-                      width={120}
-                      height={180}
-                      className="w-20 h-28 sm:w-24 sm:h-36 lg:w-28 lg:h-40 rounded-xl border-4 border-brand-red/20 shadow-xl transition-transform duration-700 hover:scale-110 object-cover"
+                      width={140}
+                      height={210}
+                      className="w-24 h-36 sm:w-28 sm:h-42 lg:w-32 lg:h-48 rounded-xl border-4 border-brand-red/20 shadow-xl transition-transform duration-700 hover:scale-110 object-cover"
                     />
                     <div className="absolute -bottom-1 -right-1 sm:-bottom-2 sm:-right-2 w-6 h-6 sm:w-8 sm:h-8 bg-brand-red rounded-full flex items-center justify-center shadow-lg">
                       <span className="text-white text-xs sm:text-sm font-bold">떡</span>
                     </div>
                   </div>
                   <div className="text-center sm:text-left">
-                    <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-2">
-                      안녕하세요! <span className="text-brand-red text-xl sm:text-2xl lg:text-3xl">떡사장</span>입니다
+                    <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
+                      안녕하세요! <span className="text-brand-red text-2xl sm:text-3xl lg:text-4xl">떡사장</span>입니다
                     </h2>
-                    <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed">
+                    <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed">
                       정성스럽게 만든 우리 떡을 소개해드릴게요
                     </p>
                   </div>
