@@ -176,7 +176,7 @@ export default function Home() {
                 >
                   <div className="w-5 h-5 sm:w-6 sm:h-6 relative overflow-hidden rounded">
                     <Image
-                      src="/kakaochanelogo.png"
+                      src="/kakaochannelllogo.png"
                       alt="KakaoTalk"
                       fill
                       className="object-contain transition-transform duration-300 group-hover:scale-110"
@@ -256,7 +256,7 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 animate-fade-in-up text-center sm:text-left">
                   <div className="relative">
                     <Image
-                      src="/person_logo.png"
+                      src="/ttucksajang.png"
                       alt="떡사장 캐릭터"
                       width={120}
                       height={120}
