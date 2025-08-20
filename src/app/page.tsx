@@ -259,8 +259,8 @@ export default function Home() {
                       src="/ttucksajang.png"
                       alt="떡사장 캐릭터"
                       width={120}
-                      height={120}
-                      className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 rounded-full border-4 border-brand-red/20 shadow-xl transition-transform duration-700 hover:scale-110"
+                      height={180}
+                      className="w-20 h-28 sm:w-24 sm:h-36 lg:w-28 lg:h-40 rounded-xl border-4 border-brand-red/20 shadow-xl transition-transform duration-700 hover:scale-110 object-cover"
                     />
                     <div className="absolute -bottom-1 -right-1 sm:-bottom-2 sm:-right-2 w-6 h-6 sm:w-8 sm:h-8 bg-brand-red rounded-full flex items-center justify-center shadow-lg">
                       <span className="text-white text-xs sm:text-sm font-bold">떡</span>
