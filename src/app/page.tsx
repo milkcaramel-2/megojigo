@@ -262,9 +262,6 @@ export default function Home() {
                       height={210}
                       className="w-24 h-36 sm:w-28 sm:h-42 lg:w-32 lg:h-48 rounded-xl border-4 border-brand-red/20 shadow-xl transition-transform duration-700 hover:scale-110 object-cover"
                     />
-                    <div className="absolute -bottom-1 -right-1 sm:-bottom-2 sm:-right-2 w-6 h-6 sm:w-8 sm:h-8 bg-brand-red rounded-full flex items-center justify-center shadow-lg">
-                      <span className="text-white text-xs sm:text-sm font-bold">떡</span>
-                    </div>
                   </div>
                   <div className="text-center sm:text-left">
                     <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
