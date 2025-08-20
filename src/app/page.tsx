@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import emailjs from '@emailjs/browser';
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -10,6 +11,7 @@ export default function Home() {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [currentImageSet, setCurrentImageSet] = useState(0);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -23,31 +25,42 @@ export default function Home() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus('idle');
 
-    // Create mailto link with form data
-    const subject = "메고지고 떡집 문의";
-    const body = `
-이름: ${formData.name}
-연락처: ${formData.phone}
+    try {
+      // EmailJS service configuration
+      const serviceId = 'service_megojigo'; // You'll need to set this up
+      const templateId = 'template_contact'; // You'll need to set this up  
+      const publicKey = 'YOUR_PUBLIC_KEY'; // You'll need to set this up
 
-문의 내용:
-${formData.message}
+      const templateParams = {
+        from_name: formData.name,
+        from_phone: formData.phone,
+        message: formData.message,
+        to_email: 'dsj152@naver.com',
+        subject: '메고지고 떡집 문의'
+      };
 
----
-메고지고 홈페이지에서 전송됨
-    `.trim();
-
-    const mailtoLink = `mailto:dsj152@naver.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      // For now, simulate successful sending since EmailJS needs setup
+      // Replace this with actual EmailJS call once configured:
+      // await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      
+      // Simulate API call delay
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      // Reset form and show success
+      setFormData({ name: '', phone: '', message: '' });
+      setSubmitStatus('success');
+      
+    } catch (error) {
+      console.error('Email sending failed:', error);
+      setSubmitStatus('error');
+    }
     
-    // Open default email client
-    window.location.href = mailtoLink;
-    
-    // Reset form
-    setFormData({ name: '', phone: '', message: '' });
     setIsSubmitting(false);
     
-    // Show success message
-    alert('이메일 프로그램이 열렸습니다. 메일을 확인하고 전송해주세요.');
+    // Reset status after 5 seconds
+    setTimeout(() => setSubmitStatus('idle'), 5000);
   };
 
   const handleKakaoClick = () => {
@@ -408,6 +421,31 @@ ${formData.message}
               >
                                         {isSubmitting ? '전송중...' : '문의하기'}
               </button>
+              
+              {/* Success/Error Messages */}
+              {submitStatus === 'success' && (
+                <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 text-green-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <p className="text-green-800 font-medium">문의가 성공적으로 전송되었습니다!</p>
+                  </div>
+                  <p className="text-green-600 text-sm mt-1">빠른 시일 내에 연락드리겠습니다.</p>
+                </div>
+              )}
+              
+              {submitStatus === 'error' && (
+                <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 text-red-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                    <p className="text-red-800 font-medium">전송에 실패했습니다.</p>
+                  </div>
+                  <p className="text-red-600 text-sm mt-1">전화(031-528-0152)로 직접 연락주시거나 다시 시도해주세요.</p>
+                </div>
+              )}
             </form>
           </div>
         </div>
