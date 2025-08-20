@@ -192,21 +192,23 @@ ${formData.message}
                       width={600}
                       height={240}
                       priority
-                      className="mx-auto h-40 w-auto lg:h-52 transition-transform duration-700 hover:scale-105"
+                      className="mx-auto h-32 w-auto sm:h-40 lg:h-52 max-w-full transition-transform duration-700 hover:scale-105"
                     />
                   </div>
 
                   <div className="animate-fade-in-up-delay">
-                    <div className="flex items-center justify-center text-base md:text-lg text-gray-500">
-                      <svg className="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                      <span className="text-center">
-                        경기도 남양주시 별내중앙로 10 (별내동)<br className="sm:hidden" />
-                        <span className="hidden sm:inline">, </span>아이파크스위트 상가 152호<br className="sm:hidden" />
-                        <span className="hidden sm:inline">, </span>롯데시네마 건너편
-                      </span>
+                    <div className="flex flex-col sm:flex-row items-center justify-center text-sm sm:text-base md:text-lg text-gray-500 space-y-2 sm:space-y-0">
+                      <div className="flex items-center">
+                        <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <span className="text-center leading-relaxed">
+                          경기도 남양주시 별내중앙로 10 (별내동)<br className="sm:hidden" />
+                          <span className="hidden sm:inline">, </span>아이파크스위트 상가 152호<br className="sm:hidden" />
+                          <span className="hidden sm:inline">, </span>롯데시네마 건너편
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -217,24 +219,24 @@ ${formData.message}
             <section className="py-8 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-white via-gray-50 to-white opacity-80"></div>
               <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-center gap-6 animate-fade-in-up">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 animate-fade-in-up text-center sm:text-left">
                   <div className="relative">
                     <Image
                       src="/person_logo.png"
                       alt="떡사장 캐릭터"
                       width={120}
                       height={120}
-                      className="w-24 h-24 lg:w-28 lg:h-28 rounded-full border-4 border-brand-red/20 shadow-xl transition-transform duration-700 hover:scale-110"
+                      className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 rounded-full border-4 border-brand-red/20 shadow-xl transition-transform duration-700 hover:scale-110"
                     />
-                    <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-brand-red rounded-full flex items-center justify-center shadow-lg">
-                      <span className="text-white text-sm font-bold">떡</span>
+                    <div className="absolute -bottom-1 -right-1 sm:-bottom-2 sm:-right-2 w-6 h-6 sm:w-8 sm:h-8 bg-brand-red rounded-full flex items-center justify-center shadow-lg">
+                      <span className="text-white text-xs sm:text-sm font-bold">떡</span>
                     </div>
                   </div>
-                  <div className="text-left">
-                    <h2 className="text-xl lg:text-2xl font-bold text-gray-900 mb-2">
-                      안녕하세요! <span className="text-brand-red text-2xl lg:text-3xl">떡사장</span>입니다
+                  <div className="text-center sm:text-left">
+                    <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-2">
+                      안녕하세요! <span className="text-brand-red text-xl sm:text-2xl lg:text-3xl">떡사장</span>입니다
                     </h2>
-                    <p className="text-base lg:text-lg text-gray-600 leading-relaxed">
+                    <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed">
                       정성스럽게 만든 우리 떡을 소개해드릴게요
                     </p>
                   </div>
@@ -252,7 +254,7 @@ ${formData.message}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="text-center mb-6 animate-fade-in-up">
-            <h2 className="text-3xl font-bold text-white mb-3"><span className="text-4xl">떡사장</span>이 추천하는 떡 제품</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3"><span className="text-3xl sm:text-4xl">떡사장</span>이 추천하는 떡 제품</h2>
             <p className="text-sm text-white/80">정성스럽게 만든 전통 한국 떡</p>
           </div>
 
@@ -352,8 +354,8 @@ ${formData.message}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-50/50 to-white"></div>
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                                               <div className="text-center mb-6">
-                    <h2 className="text-3xl font-bold text-gray-900 mb-3 animate-fade-in-up-delay">
-                      <span className="text-4xl">떡사장</span>에게 문의
+                    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 animate-fade-in-up-delay">
+                      <span className="text-3xl sm:text-4xl">떡사장</span>에게 문의
                     </h2>
                     <div className="flex items-center justify-center gap-2 mb-2 animate-fade-in-up-delay">
                       <div className="inline-flex items-center justify-center w-6 h-6 bg-brand-red rounded-full">
@@ -361,7 +363,7 @@ ${formData.message}
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                         </svg>
                       </div>
-                      <p className="text-lg font-semibold text-brand-red">031-528-0152</p>
+                      <p className="text-base sm:text-lg font-semibold text-brand-red">031-528-0152</p>
                     </div>
                     <p className="text-sm text-gray-600 animate-fade-in-up-delay">궁금한 점이 있으시면 언제든지 연락주세요</p>
                   </div>
