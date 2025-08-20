@@ -546,7 +546,7 @@ export default function Gallery() {
                   경기도 남양주시 별내중앙로 10<br />
                   (별내동)<br />
                   아이파크스위트 상가 152호<br />
-                  롯데시네마 건너편
+                  롯데시네마 건물 1층
                 </div>
               </div>
             </div>

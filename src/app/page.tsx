@@ -219,7 +219,7 @@ export default function Home() {
                         <span className="text-center leading-relaxed">
                           경기도 남양주시 별내중앙로 10 (별내동)<br className="sm:hidden" />
                           <span className="hidden sm:inline">, </span>아이파크스위트 상가 152호<br className="sm:hidden" />
-                          <span className="hidden sm:inline">, </span>롯데시네마 건너편
+                          <span className="hidden sm:inline">, </span>롯데시네마 건물 1층
                         </span>
                       </div>
                     </div>
@@ -503,7 +503,7 @@ export default function Home() {
                   경기도 남양주시 별내중앙로 10<br />
                   (별내동)<br />
                   아이파크스위트 상가 152호<br />
-                  롯데시네마 건너편
+                  롯데시네마 건물 1층
                 </div>
               </div>
             </div>
@@ -512,7 +512,7 @@ export default function Home() {
           {/* Bottom Section */}
           <div className="border-t border-gray-200 mt-6 pt-4 text-center">
             <p className="text-sm text-gray-500">
-              © 2024 메고지고. 모든 권리 보유.
+              @2025 메고지고 별내역점. All rights Reserved
             </p>
           </div>
         </div>
