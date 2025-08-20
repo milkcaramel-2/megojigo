@@ -6,7 +6,7 @@ import Image from 'next/image';
 export default function Gallery() {
   const [selectedCategory, setSelectedCategory] = useState('전체');
 
-  const categories = ['전체', '크림떡', '찹쌀떡'];
+  const categories = ['전체', '크림떡', '찹쌀떡', '전통떡'];
 
   const ricecakeProducts = [
     { 
@@ -224,6 +224,134 @@ export default function Gallery() {
       extendedDescription: "신선한 호박을 넣어 만든 건강한 떡.\n호박의 자연스러운 단맛과 부드러운 식감.",
       image: "/grid_img/chapsal/pumpkin.jpg", 
       category: "찹쌀떡" 
+    },
+    { 
+      id: 28, 
+      name: "개성주악", 
+      description: "개성 지역의 전통 주악", 
+      extendedDescription: "개성 지역 전통 제조법으로 만든 고급 주악.\n쫄깃한 식감과 깊은 전통의 맛.",
+      image: "/grid_img/juntong/gaesung.jpg", 
+      category: "전통떡" 
+    },
+    { 
+      id: 29, 
+      name: "꿀떡 방울떡", 
+      description: "꿀의 달콤함이 가득한 방울떡", 
+      extendedDescription: "천연 꿀을 넣어 만든 달콤한 방울 모양 떡.\n꿀의 진한 단맛과 부드러운 식감.",
+      image: "/grid_img/juntong/honeydduck.jpg", 
+      category: "전통떡" 
+    },
+    { 
+      id: 30, 
+      name: "꿀설기", 
+      description: "꿀의 단맛이 살아있는 설기", 
+      extendedDescription: "천연 꿀을 넣어 만든 달콤한 설기떡.\n부드럽고 촉촉한 식감과 꿀의 자연스러운 단맛.",
+      image: "/grid_img/juntong/honeyysulkiii.jpg", 
+      category: "전통떡" 
+    },
+    { 
+      id: 31, 
+      name: "동부쑥인절미", 
+      description: "동부와 쑥의 건강한 조화", 
+      extendedDescription: "영양가 풍부한 동부와 향긋한 쑥의 만남.\n건강한 재료로 만든 웰빙 인절미.",
+      image: "/grid_img/juntong/dongbussuk.jpg", 
+      category: "전통떡" 
+    },
+    { 
+      id: 32, 
+      name: "오늘의약밥", 
+      description: "매일 새롭게 만드는 약밥", 
+      extendedDescription: "찹쌀과 견과류로 만든 영양 만점 약밥.\n달콤하고 고소한 전통 건강식.",
+      image: "/grid_img/juntong/yakbab.jpg", 
+      category: "전통떡" 
+    },
+    { 
+      id: 33, 
+      name: "모시송편", 
+      description: "모시잎으로 감싼 향긋한 송편", 
+      extendedDescription: "부드러운 모시잎으로 감싼 전통 송편.\n자연의 향긋함과 쫄깃한 식감.",
+      image: "/grid_img/juntong/songpyun.jpg", 
+      category: "전통떡" 
+    },
+    { 
+      id: 34, 
+      name: "무지개설기", 
+      description: "아름다운 색깔의 설기떡", 
+      extendedDescription: "천연 색소로 만든 화려한 무지개 설기.\n보기에도 아름답고 맛도 뛰어난 떡.",
+      image: "/grid_img/juntong/rainbow.jpg", 
+      category: "전통떡" 
+    },
+    { 
+      id: 35, 
+      name: "미니두텁", 
+      description: "작고 귀여운 두텁떡", 
+      extendedDescription: "한 입 크기의 귀여운 미니 두텁떡.\n부담 없이 즐길 수 있는 작은 크기.",
+      image: "/grid_img/juntong/mini.jpg", 
+      category: "전통떡" 
+    },
+    { 
+      id: 36, 
+      name: "바람떡", 
+      description: "바람처럼 가벼운 떡", 
+      extendedDescription: "공기처럼 가볍고 부드러운 식감.\n입에서 살살 녹는 특별한 떡.",
+      image: "/grid_img/juntong/baram.jpg", 
+      category: "전통떡" 
+    },
+    { 
+      id: 37, 
+      name: "백년초꽃송편", 
+      description: "백년초의 건강한 효능", 
+      extendedDescription: "백년초를 넣어 만든 건강한 꽃송편.\n선명한 색깔과 건강한 영양소.",
+      image: "/grid_img/juntong/baekneoncho.jpg", 
+      category: "전통떡" 
+    },
+    { 
+      id: 38, 
+      name: "삼색미니송편", 
+      description: "세 가지 색깔의 미니 송편", 
+      extendedDescription: "빨강, 노랑, 초록 세 가지 색의 미니 송편.\n작고 예쁜 한 입 크기의 전통 떡.",
+      image: "/grid_img/juntong/aangkko.jpg", 
+      category: "전통떡" 
+    },
+    { 
+      id: 39, 
+      name: "수수팥떡", 
+      description: "수수와 팥의 고소한 만남", 
+      extendedDescription: "영양가 풍부한 수수와 달콤한 팥의 조화.\n건강하고 고소한 전통 곡물 떡.",
+      image: "/grid_img/juntong/susupat.jpg", 
+      category: "전통떡" 
+    },
+    { 
+      id: 40, 
+      name: "우유백설기", 
+      description: "부드러운 우유의 고소함", 
+      extendedDescription: "신선한 우유를 넣어 만든 부드러운 백설기.\n우유의 고소함과 부드러운 식감.",
+      image: "/grid_img/juntong/milk.jpg", 
+      category: "전통떡" 
+    },
+    { 
+      id: 41, 
+      name: "잣범벅쑥인절미", 
+      description: "잣과 쑥의 프리미엄 조합", 
+      extendedDescription: "고급 잣과 향긋한 쑥을 넣은 특별한 인절미.\n고소함과 향긋함의 완벽한 조화.",
+      image: "/grid_img/juntong/jattbumbukinjulmi.jpg", 
+      category: "전통떡" 
+    },
+    { 
+      id: 42, 
+      name: "제사편", 
+      description: "정성스러운 제사용 떡", 
+      extendedDescription: "제사와 차례상을 위한 정성스러운 떡.\n전통 예법에 맞는 격식 있는 떡.",
+      image: "/grid_img/juntong/jaesa.jpg", 
+      category: "전통떡" 
+    },
+    { 
+      id: 43, 
+      name: "참쑥개떡", 
+      description: "참쑥의 진한 향과 맛", 
+      extendedDescription: "진짜 참쑥을 넣어 만든 전통 개떡.\n쑥의 진한 향과 쫄깃한 식감.",
+      image: "/grid_img/juntong/chamssuk.jpg", 
+      category: "전통떡" 
     }
   ];
 
@@ -267,9 +395,9 @@ export default function Gallery() {
       <section className="bg-brand-red py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            <span className="text-5xl lg:text-6xl">떡사장</span>의 특별한 떡 컬렉션
+            <span className="text-5xl lg:text-6xl">떡사장</span>의 모든 떡 컬렉션
           </h1>
-          <p className="text-xl text-white/90 mb-2">크림떡과 찹쌀떡의 다양한 맛을 만나보세요</p>
+          <p className="text-xl text-white/90 mb-2">크림떡, 찹쌀떡, 전통떡의 다양한 맛을 만나보세요</p>
           <p className="text-white/70 text-sm">카테고리를 선택하여 원하시는 떡을 찾아보세요</p>
         </div>
       </section>
