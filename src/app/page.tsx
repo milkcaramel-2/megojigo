@@ -289,9 +289,9 @@ ${formData.message}
             </div>
             
             {/* Two Images on Right - Sliding Animation */}
-            <div className="w-full md:w-80 flex flex-row md:flex-col gap-4 h-32 md:h-full">
+            <div className="w-full md:w-80 flex flex-row md:flex-col gap-4 h-32 md:h-96">
               {[1, 2].map((position, posIndex) => (
-                                        <div key={posIndex} className="group flex-1 md:flex-none h-full md:h-[calc(50%-8px)]">
+                                        <div key={posIndex} className="group flex-1 md:flex-none h-full md:h-[184px]">
                           <div 
                             className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 h-full relative cursor-pointer"
                             onClick={handleGalleryImageClick}
