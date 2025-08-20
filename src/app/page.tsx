@@ -195,7 +195,7 @@ ${formData.message}
                       className="mx-auto h-40 w-auto lg:h-52 transition-transform duration-700 hover:scale-105"
                     />
                   </div>
-                  <p className="text-xl md:text-2xl lg:text-3xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed font-medium animate-fade-in-up-delay">
+                  <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed font-medium animate-fade-in-up-delay">
                     전통의 가치와 현대의 감각이 만나 정성스럽게 빚어낸 프리미엄 한국 떡
                   </p>
                   <div className="animate-fade-in-up-delay">
@@ -255,9 +255,9 @@ ${formData.message}
           </div>
 
           {/* Animated 3-Image Gallery - Smooth Sliding */}
-          <div className="flex gap-4 max-w-6xl mx-auto mb-6 h-96">
+          <div className="flex flex-col md:flex-row gap-4 max-w-6xl mx-auto mb-6">
             {/* Big Image on Left - Sliding Animation */}
-            <div className="flex-1 group">
+            <div className="flex-1 group h-64 md:h-96">
                                           <div 
                               className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 h-full relative cursor-pointer"
                               onClick={handleGalleryImageClick}
@@ -285,9 +285,9 @@ ${formData.message}
             </div>
             
             {/* Two Images on Right - Sliding Animation */}
-            <div className="w-80 flex flex-col gap-4 h-full">
+            <div className="w-full md:w-80 flex flex-row md:flex-col gap-4 h-32 md:h-full">
               {[1, 2].map((position, posIndex) => (
-                                        <div key={posIndex} className="group" style={{height: 'calc(50% - 8px)'}}>
+                                        <div key={posIndex} className="group flex-1 md:flex-none h-full md:h-[calc(50%-8px)]">
                           <div 
                             className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 h-full relative cursor-pointer"
                             onClick={handleGalleryImageClick}

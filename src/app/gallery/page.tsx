@@ -394,10 +394,10 @@ export default function Gallery() {
       {/* Hero Section */}
       <section className="bg-brand-red py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            <span className="text-5xl lg:text-6xl">떡사장</span>의 완벽한 떡 컬렉션
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+            <span className="text-4xl md:text-5xl lg:text-6xl">떡사장</span>의 완벽한 떡 컬렉션
           </h1>
-          <p className="text-xl text-white/90 mb-2">크림떡, 찹쌀떡, 전통떡의 모든 맛을 만나보세요</p>
+          <p className="text-lg md:text-xl text-white/90 mb-2">크림떡, 찹쌀떡, 전통떡의 모든 맛을 만나보세요</p>
           <p className="text-white/70 text-sm">총 43가지 다양한 떡을 카테고리별로 확인하세요</p>
         </div>
       </section>
@@ -432,14 +432,14 @@ export default function Gallery() {
               총 <span className="font-bold text-brand-red">{filteredProducts.length}</span>개의 제품
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {filteredProducts.map((product, index) => (
               <div 
                 key={product.id}
                 className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 animate-fade-in-up flex flex-col h-full"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
                   <Image
                     src={product.image}
                     alt={product.name}
