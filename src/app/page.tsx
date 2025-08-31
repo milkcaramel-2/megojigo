@@ -182,7 +182,7 @@ export default function Home() {
                       className="object-contain transition-transform duration-300 group-hover:scale-110"
                     />
                   </div>
-                  <span className="text-gray-700 text-xs sm:text-sm font-medium hidden sm:block transition-colors duration-300 group-hover:text-gray-900">카카오</span>
+                  <span className="text-gray-700 text-xs sm:text-sm font-medium hidden sm:block transition-colors duration-300 group-hover:text-gray-900">카카오 채널 추가</span>
                 </button>
 
                 {/* Instagram Button */}
@@ -214,6 +214,29 @@ export default function Home() {
           </div>
         </div>
       </nav>
+
+            {/* 떡사장 Character Introduction Section */}
+            <section className="py-12 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-white via-gray-50 to-white opacity-80"></div>
+              <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 animate-fade-in-up text-center sm:text-left">
+                  <div className="relative">
+                    <Image
+                      src="/ttucksajang.png"
+                      alt="떡사장 캐릭터"
+                      width={180}
+                      height={270}
+                      className="w-32 h-48 sm:w-36 sm:h-54 lg:w-40 lg:h-60 rounded-xl border-4 border-brand-red/20 shadow-xl transition-transform duration-700 hover:scale-110 object-cover"
+                    />
+                  </div>
+                  <div className="text-center sm:text-left">
+                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
+                      <span className="text-brand-red text-3xl sm:text-4xl lg:text-5xl">떡사장</span>이 운영하는 메고지고 별내역점입니다.
+                    </h2>
+                  </div>
+                </div>
+              </div>
+            </section>
 
                         {/* Hero Section */}
             <section className="relative bg-white overflow-hidden">
@@ -248,34 +271,6 @@ export default function Home() {
                 </div>
               </div>
             </section>
-
-            {/* 떡사장 Character Introduction Section */}
-            <section className="py-8 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-white via-gray-50 to-white opacity-80"></div>
-              <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 animate-fade-in-up text-center sm:text-left">
-                  <div className="relative">
-                    <Image
-                      src="/ttucksajang.png"
-                      alt="떡사장 캐릭터"
-                      width={140}
-                      height={210}
-                      className="w-24 h-36 sm:w-28 sm:h-42 lg:w-32 lg:h-48 rounded-xl border-4 border-brand-red/20 shadow-xl transition-transform duration-700 hover:scale-110 object-cover"
-                    />
-                  </div>
-                  <div className="text-center sm:text-left">
-                    <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
-                      안녕하세요! <span className="text-brand-red text-2xl sm:text-3xl lg:text-4xl">떡사장</span>입니다
-                    </h2>
-                    <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed">
-                      정성스럽게 만든 우리 떡을 소개해드릴게요
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-
 
 
 
