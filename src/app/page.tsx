@@ -204,14 +204,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          
-          {/* Mobile Navigation Menu - Enhanced Touch Targets */}
-          <div className="md:hidden border-t border-gray-100 py-3">
-            <div className="flex justify-center space-x-8">
-              <button onClick={handleProductsClick} className="text-gray-600 hover:text-gray-900 py-3 px-6 text-base font-medium transition-all duration-300 rounded-lg hover:bg-gray-50 min-h-[48px] flex items-center justify-center">제품</button>
-              <button onClick={handleContactClick} className="text-gray-600 hover:text-gray-900 py-3 px-6 text-base font-medium transition-all duration-300 rounded-lg hover:bg-gray-50 min-h-[48px] flex items-center justify-center">연락처</button>
-            </div>
-          </div>
+
         </div>
       </nav>
 
