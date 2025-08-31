@@ -365,25 +365,25 @@ export default function Gallery() {
 
   return (
     <div className="min-h-screen bg-gray-50 font-sans">
-      {/* Navigation */}
+      {/* Navigation - Mobile Optimized */}
       <nav className="bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
+          <div className="flex justify-between items-center py-3 sm:py-4">
             <div className="flex items-center">
-              <button onClick={handleBackToHome} className="flex items-center mr-4 transition-transform duration-300 hover:scale-105">
+              <button onClick={handleBackToHome} className="flex items-center mr-2 sm:mr-4 transition-transform duration-300 hover:scale-105">
               <Image
                 src="/megojigo_SUBLOGO.png"
                 alt="메고지고 서브 로고"
                 width={80}
                 height={32}
-                  className="h-8 w-auto"
+                  className="h-6 sm:h-8 w-auto"
               />
               </button>
-              <h1 className="text-xl font-bold text-gray-900">떡 갤러리</h1>
+              <h1 className="text-lg sm:text-xl font-bold text-gray-900">떡 갤러리</h1>
             </div>
             <button 
               onClick={handleBackToHome}
-              className="bg-brand-red text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors duration-300"
+              className="bg-brand-red text-white px-3 py-2 sm:px-4 sm:py-2 text-sm sm:text-base rounded-lg hover:bg-red-700 transition-colors duration-300 min-h-[40px] flex items-center justify-center"
             >
               홈으로
             </button>
@@ -391,27 +391,27 @@ export default function Gallery() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="bg-brand-red py-12">
+      {/* Hero Section - Mobile Optimized */}
+      <section className="bg-brand-red py-8 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            <span className="text-4xl md:text-5xl lg:text-6xl">떡사장</span>이 파는 떡
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 leading-tight">
+            <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">떡사장</span>이 파는 떡
           </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-2">크림떡, 찹쌀떡, 전통떡의 모든 맛을 만나보세요</p>
-          <p className="text-white/70 text-sm">총 43가지 다양한 떡을 카테고리별로 확인하세요</p>
+          <p className="text-base sm:text-lg md:text-xl text-white/90 mb-2">크림떡, 찹쌀떡, 전통떡의 모든 맛을 만나보세요</p>
+          <p className="text-white/70 text-sm sm:text-base">총 43가지 다양한 떡을 카테고리별로 확인하세요</p>
         </div>
       </section>
 
-      {/* Category Filter */}
-      <section className="py-6 bg-white border-b border-gray-200">
+      {/* Category Filter - Mobile Optimized */}
+      <section className="py-4 sm:py-6 bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-lg font-semibold text-gray-900 mb-4">카테고리 선택</h2>
-          <div className="flex flex-wrap justify-center gap-3">
+          <h2 className="text-center text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">카테고리 선택</h2>
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
+                className={`px-4 py-3 sm:py-2 text-sm sm:text-base rounded-lg font-medium transition-all duration-300 min-h-[44px] flex items-center justify-center ${
                   selectedCategory === category
                     ? 'bg-brand-red text-white shadow-md scale-105'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:scale-102'
@@ -432,7 +432,7 @@ export default function Gallery() {
               총 <span className="font-bold text-brand-red">{filteredProducts.length}</span>개의 제품
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {filteredProducts.map((product, index) => (
               <div 
                 key={product.id}
@@ -447,17 +447,17 @@ export default function Gallery() {
                     height={240}
                     className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                   />
-                  <div className="absolute top-4 right-4">
-                    <span className="bg-brand-red text-white px-3 py-1 rounded-full text-sm font-medium">
+                  <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
+                    <span className="bg-brand-red text-white px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-medium">
                       {product.category}
                     </span>
                   </div>
                 </div>
-                <div className="p-6 flex-grow flex flex-col">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{product.name}</h3>
-                  <p className="text-gray-600 font-medium mb-3">{product.description}</p>
+                <div className="p-4 sm:p-6 flex-grow flex flex-col">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">{product.name}</h3>
+                  <p className="text-sm sm:text-base text-gray-600 font-medium mb-3">{product.description}</p>
                   <div className="border-t border-gray-100 pt-3 flex-grow">
-                    <p className="text-sm text-gray-500 leading-relaxed whitespace-pre-line">
+                    <p className="text-xs sm:text-sm text-gray-500 leading-relaxed whitespace-pre-line">
                       {product.extendedDescription}
                     </p>
                   </div>
@@ -468,25 +468,25 @@ export default function Gallery() {
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <section className="py-12 bg-brand-red">
+      {/* Contact CTA - Mobile Optimized */}
+      <section className="py-8 sm:py-12 bg-brand-red">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-            <span className="text-4xl lg:text-5xl">떡사장</span>에게 주문하세요
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4 leading-tight">
+            <span className="text-3xl sm:text-4xl lg:text-5xl">떡사장</span>에게 주문하세요
           </h2>
-          <p className="text-xl text-white/90 mb-8">
+          <p className="text-base sm:text-xl text-white/90 mb-6 sm:mb-8">
             원하시는 떡이 있으시면 언제든지 연락주세요
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <a 
               href="tel:031-528-0152"
-              className="bg-white text-brand-red px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-colors duration-300"
+              className="bg-white text-brand-red px-6 py-4 sm:px-8 sm:py-4 rounded-lg font-bold hover:bg-gray-100 transition-colors duration-300 min-h-[52px] flex items-center justify-center text-base sm:text-lg"
             >
               📞 031-528-0152
             </a>
             <button 
               onClick={handleBackToHome}
-              className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-brand-red transition-colors duration-300"
+              className="border-2 border-white text-white px-6 py-4 sm:px-8 sm:py-4 rounded-lg font-bold hover:bg-white hover:text-brand-red transition-colors duration-300 min-h-[52px] flex items-center justify-center text-base sm:text-lg"
             >
               홈페이지로 돌아가기
             </button>

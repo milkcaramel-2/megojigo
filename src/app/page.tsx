@@ -149,7 +149,7 @@ export default function Home() {
             {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-16 sm:h-18">
             <div className="flex items-center">
         <Image
                 src="/sub_logo.png"
@@ -159,22 +159,22 @@ export default function Home() {
                 className="h-8 w-auto mt-1.5 transition-transform duration-300 hover:scale-105"
               />
             </div>
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2 sm:space-x-4">
               {/* Navigation Links */}
               <div className="hidden md:flex items-baseline space-x-6">
                 <button onClick={handleProductsClick} className="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-all duration-300 hover:bg-gray-50 rounded-lg transform hover:-translate-y-0.5">제품</button>
                 <button onClick={handleContactClick} className="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-all duration-300 hover:bg-gray-50 rounded-lg transform hover:-translate-y-0.5">연락처</button>
               </div>
               
-              {/* Social Media Buttons */}
-              <div className="flex space-x-2 sm:space-x-3">
+              {/* Social Media Buttons - Mobile Optimized */}
+              <div className="flex space-x-1.5 sm:space-x-3">
                 {/* KakaoTalk Button */}
                 <button
                   onClick={handleKakaoClick}
-                  className="group bg-white hover:bg-yellow-50 border-2 border-gray-200 hover:border-yellow-400 px-3 py-2 sm:px-4 sm:py-2 rounded-lg transition-all duration-300 flex items-center space-x-1 sm:space-x-2 transform hover:scale-105 hover:shadow-md"
+                  className="group bg-white hover:bg-yellow-50 border-2 border-gray-200 hover:border-yellow-400 px-2 py-2 sm:px-4 sm:py-2 rounded-lg transition-all duration-300 flex items-center space-x-1 sm:space-x-2 transform hover:scale-105 hover:shadow-md min-h-[44px] min-w-[44px] justify-center"
                   aria-label="카카오톡 떡사장 채널"
                 >
-                  <div className="w-5 h-5 sm:w-6 sm:h-6 relative overflow-hidden rounded">
+                  <div className="w-6 h-6 sm:w-6 sm:h-6 relative overflow-hidden rounded">
                     <Image
                       src="/kakaochannelllogo.png"
                       alt="KakaoTalk"
@@ -182,16 +182,16 @@ export default function Home() {
                       className="object-contain transition-transform duration-300 group-hover:scale-110"
                     />
                   </div>
-                  <span className="text-gray-700 text-xs sm:text-sm font-medium hidden sm:block transition-colors duration-300 group-hover:text-gray-900">카카오 채널 추가</span>
+                  <span className="text-gray-700 text-xs sm:text-sm font-medium hidden lg:block transition-colors duration-300 group-hover:text-gray-900">카카오 채널 추가</span>
                 </button>
 
                 {/* Instagram Button */}
                 <button
                   onClick={handleInstagramClick}
-                  className="group bg-white hover:bg-gradient-to-r hover:from-pink-50 hover:to-purple-50 border-2 border-gray-200 hover:border-pink-400 px-3 py-2 sm:px-4 sm:py-2 rounded-lg transition-all duration-300 flex items-center space-x-1 sm:space-x-2 transform hover:scale-105 hover:shadow-md"
+                  className="group bg-white hover:bg-gradient-to-r hover:from-pink-50 hover:to-purple-50 border-2 border-gray-200 hover:border-pink-400 px-2 py-2 sm:px-4 sm:py-2 rounded-lg transition-all duration-300 flex items-center space-x-1 sm:space-x-2 transform hover:scale-105 hover:shadow-md min-h-[44px] min-w-[44px] justify-center"
                   aria-label="인스타그램 DSJ152"
                 >
-                  <div className="w-5 h-5 sm:w-6 sm:h-6 relative overflow-hidden rounded">
+                  <div className="w-6 h-6 sm:w-6 sm:h-6 relative overflow-hidden rounded">
                     <Image
                       src="/instagramlogo.png"
                       alt="Instagram"
@@ -199,39 +199,39 @@ export default function Home() {
                       className="object-contain transition-transform duration-300 group-hover:scale-110"
                     />
                   </div>
-                  <span className="text-gray-700 text-xs sm:text-sm font-medium hidden sm:block transition-colors duration-300 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-purple-500 group-hover:bg-clip-text">인스타그램</span>
+                  <span className="text-gray-700 text-xs sm:text-sm font-medium hidden lg:block transition-colors duration-300 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-purple-500 group-hover:bg-clip-text">인스타그램</span>
                 </button>
               </div>
             </div>
           </div>
           
-          {/* Mobile Navigation Menu */}
-          <div className="md:hidden border-t border-gray-100 py-2">
+          {/* Mobile Navigation Menu - Enhanced Touch Targets */}
+          <div className="md:hidden border-t border-gray-100 py-3">
             <div className="flex justify-center space-x-8">
-              <button onClick={handleProductsClick} className="text-gray-600 hover:text-gray-900 py-2 text-sm font-medium transition-all duration-300">제품</button>
-              <button onClick={handleContactClick} className="text-gray-600 hover:text-gray-900 py-2 text-sm font-medium transition-all duration-300">연락처</button>
+              <button onClick={handleProductsClick} className="text-gray-600 hover:text-gray-900 py-3 px-6 text-base font-medium transition-all duration-300 rounded-lg hover:bg-gray-50 min-h-[48px] flex items-center justify-center">제품</button>
+              <button onClick={handleContactClick} className="text-gray-600 hover:text-gray-900 py-3 px-6 text-base font-medium transition-all duration-300 rounded-lg hover:bg-gray-50 min-h-[48px] flex items-center justify-center">연락처</button>
             </div>
           </div>
         </div>
       </nav>
 
-            {/* 떡사장 Character Introduction Section */}
-            <section className="py-12 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+            {/* 떡사장 Character Introduction Section - Mobile Optimized */}
+            <section className="py-8 sm:py-12 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-white via-gray-50 to-white opacity-80"></div>
               <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 animate-fade-in-up text-center sm:text-left">
-                  <div className="relative">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-8 animate-fade-in-up text-center sm:text-left">
+                  <div className="relative flex-shrink-0">
                     <Image
                       src="/ttucksajang.png"
                       alt="떡사장 캐릭터"
                       width={180}
                       height={270}
-                      className="w-32 h-48 sm:w-36 sm:h-54 lg:w-40 lg:h-60 rounded-xl border-4 border-brand-red/20 shadow-xl transition-transform duration-700 hover:scale-110 object-cover"
+                      className="w-28 h-42 sm:w-32 sm:h-48 md:w-36 md:h-54 lg:w-40 lg:h-60 rounded-xl border-4 border-brand-red/20 shadow-xl transition-transform duration-700 hover:scale-110 object-cover"
                     />
                   </div>
-                  <div className="text-center sm:text-left">
-                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
-                      <span className="text-brand-red text-3xl sm:text-4xl lg:text-5xl">떡사장</span>이 운영하는 메고지고 별내역점입니다.
+                  <div className="text-center sm:text-left max-w-md sm:max-w-none">
+                    <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight">
+                      <span className="text-brand-red text-xl sm:text-3xl md:text-4xl lg:text-5xl">떡사장</span>이 운영하는<br className="sm:hidden" /><span className="sm:inline"> </span>메고지고 별내역점입니다.
                     </h2>
                   </div>
                 </div>
@@ -399,14 +399,14 @@ export default function Home() {
               onSubmit={handleSubmit}
               className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 animate-slide-in-right"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-4">
                 <input
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
                   required
-                  className="px-3 py-2 rounded-lg border-2 border-gray-200 text-sm w-full font-medium focus:border-brand-red transition-all duration-300 placeholder-gray-400"
+                  className="px-4 py-3 sm:py-2 rounded-lg border-2 border-gray-200 text-base sm:text-sm w-full font-medium focus:border-brand-red transition-all duration-300 placeholder-gray-400 min-h-[48px]"
                   placeholder="성함"
                 />
                 <input
@@ -414,7 +414,7 @@ export default function Home() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleInputChange}
-                  className="px-3 py-2 rounded-lg border-2 border-gray-200 text-sm w-full font-medium focus:border-brand-red transition-all duration-300 placeholder-gray-400"
+                  className="px-4 py-3 sm:py-2 rounded-lg border-2 border-gray-200 text-base sm:text-sm w-full font-medium focus:border-brand-red transition-all duration-300 placeholder-gray-400 min-h-[48px]"
                   placeholder="연락처"
                 />
               </div>
@@ -423,14 +423,14 @@ export default function Home() {
                 value={formData.message}
                 onChange={handleInputChange}
                 required
-                rows={3}
-                className="px-3 py-2 rounded-lg border-2 border-gray-200 text-sm w-full font-medium focus:border-brand-red transition-all duration-300 placeholder-gray-400 mb-4 resize-none"
+                rows={4}
+                className="px-4 py-3 sm:py-2 rounded-lg border-2 border-gray-200 text-base sm:text-sm w-full font-medium focus:border-brand-red transition-all duration-300 placeholder-gray-400 mb-4 sm:mb-6 resize-none min-h-[120px]"
                 placeholder="문의 내용을 자세히 적어주세요"
               />
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-brand-red text-white hover:bg-red-700 px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-brand-red text-white hover:bg-red-700 px-6 py-4 sm:py-3 rounded-lg font-semibold text-base transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed min-h-[52px] flex items-center justify-center"
               >
                                         {isSubmitting ? '전송중...' : '문의하기'}
               </button>
