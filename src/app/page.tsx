@@ -146,6 +146,31 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50 font-sans pt-16">
       
+      {/* Chuseok Special Menu Banner */}
+      <div className="bg-gradient-to-r from-orange-50 via-red-50 to-orange-50 border-b border-orange-200 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+            <div className="flex-shrink-0">
+              <Image
+                src="/chuseok.png"
+                alt="추석 특별 메뉴"
+                width={120}
+                height={120}
+                className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 rounded-2xl shadow-lg border-2 border-orange-200 transition-transform duration-300 hover:scale-105 object-cover"
+              />
+            </div>
+            <div className="text-center sm:text-left">
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-orange-800 mb-1">
+                🌕 추석 특별 메뉴 🌕
+              </h2>
+              <p className="text-sm sm:text-base text-orange-700 leading-relaxed">
+                한가위를 맞아 준비한 특별한 전통 떡을 만나보세요
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
             {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
