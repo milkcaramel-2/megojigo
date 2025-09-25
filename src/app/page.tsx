@@ -146,6 +146,58 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50 font-sans pt-16">
       
+      {/* Chuseok Special Menu - Top Priority */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-brand-red relative overflow-hidden min-h-screen flex items-center">
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-red/95 to-brand-red/90"></div>
+        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Large Background Yellow Circles for Left & Right Sides */}
+          <div className="absolute left-4 top-1/6 w-32 h-32 sm:w-48 sm:h-48 lg:w-64 lg:h-64 bg-yellow-400/20 rounded-full animate-pulse opacity-60" style={{animationDelay: '0.5s'}}></div>
+          <div className="absolute left-12 bottom-1/6 w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 bg-yellow-300/30 rounded-full animate-pulse opacity-50" style={{animationDelay: '2s'}}></div>
+          <div className="absolute right-4 top-1/5 w-36 h-36 sm:w-52 sm:h-52 lg:w-72 lg:h-72 bg-yellow-500/15 rounded-full animate-pulse opacity-70" style={{animationDelay: '1s'}}></div>
+          <div className="absolute right-8 bottom-1/5 w-28 h-28 sm:w-40 sm:h-40 lg:w-48 lg:h-48 bg-yellow-200/25 rounded-full animate-pulse opacity-40" style={{animationDelay: '3s'}}></div>
+
+          {/* Floating Moon and Star Elements */}
+          <div className="absolute left-2 top-1/3 text-5xl sm:text-6xl lg:text-8xl text-yellow-300/60 animate-bounce" style={{animationDelay: '1.5s'}}>🌙</div>
+          <div className="absolute right-2 top-1/6 text-4xl sm:text-5xl lg:text-7xl text-yellow-400/70 animate-bounce" style={{animationDelay: '2.5s'}}>🌟</div>
+          <div className="absolute left-4 bottom-12 text-3xl sm:text-4xl lg:text-6xl text-yellow-200/50 animate-bounce" style={{animationDelay: '0.8s'}}>✨</div>
+          <div className="absolute right-4 bottom-1/6 text-4xl sm:text-5xl lg:text-7xl text-yellow-300/60 animate-bounce" style={{animationDelay: '1.8s'}}>💫</div>
+
+          <div className="text-center relative z-10">
+            <div className="mb-12 sm:mb-16 lg:mb-20">
+              <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold text-white mb-6 sm:mb-8 lg:mb-10 leading-tight">
+                🌕 추석 선물세트 🌕
+              </h1>
+              <p className="text-xl sm:text-2xl lg:text-3xl text-white/95 max-w-4xl mx-auto leading-relaxed font-medium">
+                정성스럽게 준비한 한가위 특별 선물세트로<br className="hidden sm:block" />
+                소중한 분들께 마음을 전하세요
+              </p>
+            </div>
+            
+            <div className="relative bg-white/15 backdrop-blur-md rounded-3xl p-8 sm:p-12 lg:p-16 inline-block shadow-2xl border border-white/20 max-w-5xl">
+              {/* Animated Yellow Dots Around Image */}
+              <div className="absolute -top-4 -left-4 w-12 h-12 bg-yellow-400 rounded-full opacity-80 animate-pulse"></div>
+              <div className="absolute -bottom-4 -right-4 w-10 h-10 bg-yellow-300 rounded-full opacity-60 animate-pulse" style={{animationDelay: '1s'}}></div>
+              <div className="absolute top-8 right-8 w-6 h-6 bg-yellow-200 rounded-full opacity-40 animate-pulse" style={{animationDelay: '2s'}}></div>
+              <div className="absolute bottom-12 left-12 w-8 h-8 bg-yellow-300 rounded-full opacity-50 animate-pulse" style={{animationDelay: '3s'}}></div>
+              <div className="absolute top-1/2 left-8 w-5 h-5 bg-yellow-400 rounded-full opacity-70 animate-pulse" style={{animationDelay: '1.5s'}}></div>
+              <div className="absolute top-12 left-1/2 w-7 h-7 bg-yellow-200 rounded-full opacity-60 animate-pulse" style={{animationDelay: '2.5s'}}></div>
+              
+              {/* Floating Stars Around Image */}
+              <div className="absolute top-8 right-12 text-2xl text-yellow-300 opacity-80 animate-bounce" style={{animationDelay: '0.5s'}}>⭐</div>
+              <div className="absolute bottom-8 left-8 text-xl text-yellow-200 opacity-60 animate-bounce" style={{animationDelay: '1.2s'}}>✨</div>
+              <div className="absolute top-1/3 right-8 text-2xl text-yellow-400 opacity-70 animate-bounce" style={{animationDelay: '2.1s'}}>💫</div>
+              
+              <Image
+                src="/chuseok.png"
+                alt="추석 선물세트"
+                width={800}
+                height={800}
+                className="w-80 h-80 sm:w-[28rem] sm:h-[28rem] md:w-[32rem] md:h-[32rem] lg:w-[36rem] lg:h-[36rem] xl:w-[40rem] xl:h-[40rem] rounded-2xl shadow-2xl transition-all duration-500 hover:scale-105 hover:rotate-1 object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
       
             {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
@@ -265,59 +317,6 @@ export default function Home() {
                 </div>
               </div>
             </section>
-
-      {/* Chuseok Special Menu */}
-      <section className="py-12 sm:py-16 bg-brand-red relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-red/95 to-brand-red/90"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Large Background Yellow Circles for Left & Right Sides */}
-          <div className="absolute left-8 top-1/4 w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 bg-yellow-400/20 rounded-full animate-pulse opacity-60" style={{animationDelay: '0.5s'}}></div>
-          <div className="absolute left-16 bottom-1/4 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-yellow-300/30 rounded-full animate-pulse opacity-50" style={{animationDelay: '2s'}}></div>
-          <div className="absolute right-8 top-1/3 w-28 h-28 sm:w-36 sm:h-36 lg:w-44 lg:h-44 bg-yellow-500/15 rounded-full animate-pulse opacity-70" style={{animationDelay: '1s'}}></div>
-          <div className="absolute right-12 bottom-1/3 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-yellow-200/25 rounded-full animate-pulse opacity-40" style={{animationDelay: '3s'}}></div>
-
-          {/* Floating Moon and Star Elements */}
-          <div className="absolute left-4 top-1/2 text-4xl sm:text-5xl lg:text-6xl text-yellow-300/60 animate-bounce" style={{animationDelay: '1.5s'}}>🌙</div>
-          <div className="absolute right-4 top-1/4 text-3xl sm:text-4xl lg:text-5xl text-yellow-400/70 animate-bounce" style={{animationDelay: '2.5s'}}>🌟</div>
-          <div className="absolute left-6 bottom-8 text-2xl sm:text-3xl lg:text-4xl text-yellow-200/50 animate-bounce" style={{animationDelay: '0.8s'}}>✨</div>
-          <div className="absolute right-6 bottom-1/4 text-3xl sm:text-4xl lg:text-5xl text-yellow-300/60 animate-bounce" style={{animationDelay: '1.8s'}}>💫</div>
-
-          <div className="text-center relative z-10">
-            <div className="mb-8 sm:mb-12">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-                🌕 추석 선물세트 🌕
-              </h2>
-              <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
-                정성스럽게 준비한 한가위 특별 선물세트로<br className="sm:hidden" />
-                소중한 분들께 마음을 전하세요
-              </p>
-            </div>
-            
-            <div className="relative bg-white/15 backdrop-blur-md rounded-3xl p-6 sm:p-8 lg:p-12 inline-block shadow-2xl border border-white/20">
-              {/* Animated Yellow Dots Around Image */}
-              <div className="absolute -top-2 -left-2 w-8 h-8 bg-yellow-400 rounded-full opacity-80 animate-pulse"></div>
-              <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-yellow-300 rounded-full opacity-60 animate-pulse" style={{animationDelay: '1s'}}></div>
-              <div className="absolute top-4 right-4 w-4 h-4 bg-yellow-200 rounded-full opacity-40 animate-pulse" style={{animationDelay: '2s'}}></div>
-              <div className="absolute bottom-8 left-8 w-5 h-5 bg-yellow-300 rounded-full opacity-50 animate-pulse" style={{animationDelay: '3s'}}></div>
-              <div className="absolute top-1/2 left-4 w-3 h-3 bg-yellow-400 rounded-full opacity-70 animate-pulse" style={{animationDelay: '1.5s'}}></div>
-              <div className="absolute top-8 left-1/2 w-4 h-4 bg-yellow-200 rounded-full opacity-60 animate-pulse" style={{animationDelay: '2.5s'}}></div>
-              
-              {/* Floating Stars Around Image */}
-              <div className="absolute top-6 right-8 text-yellow-300 opacity-80 animate-bounce" style={{animationDelay: '0.5s'}}>⭐</div>
-              <div className="absolute bottom-6 left-6 text-yellow-200 opacity-60 animate-bounce" style={{animationDelay: '1.2s'}}>✨</div>
-              <div className="absolute top-1/3 right-6 text-yellow-400 opacity-70 animate-bounce" style={{animationDelay: '2.1s'}}>💫</div>
-              
-              <Image
-                src="/chuseok.png"
-                alt="추석 선물세트"
-                width={600}
-                height={600}
-                className="w-72 h-72 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-2xl shadow-2xl transition-all duration-500 hover:scale-105 hover:rotate-1 object-contain"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Gallery Section */}
       <section className="py-8 bg-brand-red relative overflow-hidden">
