@@ -187,13 +187,20 @@ export default function Home() {
               <div className="absolute bottom-8 left-8 text-xl text-yellow-200 opacity-60 animate-bounce" style={{animationDelay: '1.2s'}}>✨</div>
               <div className="absolute top-1/3 right-8 text-2xl text-yellow-400 opacity-70 animate-bounce" style={{animationDelay: '2.1s'}}>💫</div>
               
-              <Image
-                src="/chuseok.png"
-                alt="추석 선물세트"
-                width={800}
-                height={800}
-                className="w-80 h-80 sm:w-[28rem] sm:h-[28rem] md:w-[32rem] md:h-[32rem] lg:w-[36rem] lg:h-[36rem] xl:w-[40rem] xl:h-[40rem] rounded-2xl shadow-2xl transition-all duration-500 hover:scale-105 hover:rotate-1 object-contain"
-              />
+              <a 
+                href="https://naver.me/xaff4hIR" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block cursor-pointer"
+              >
+                <Image
+                  src="/chuseok.png"
+                  alt="추석 선물세트"
+                  width={800}
+                  height={800}
+                  className="w-80 h-80 sm:w-[28rem] sm:h-[28rem] md:w-[32rem] md:h-[32rem] lg:w-[36rem] lg:h-[36rem] xl:w-[40rem] xl:h-[40rem] rounded-2xl shadow-2xl transition-all duration-500 hover:scale-105 hover:rotate-1 object-contain"
+                />
+              </a>
             </div>
           </div>
         </div>
